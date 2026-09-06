@@ -172,6 +172,246 @@ video, iframe { max-width: 100%; }
 /* Image quality/performance */
 img { height: auto; }
 
+/* =====================================================
+   STUDENT PORTAL PREVIEW
+   Turns the existing portal mockup into a realistic
+   dashboard-style preview inspired by the actual portal UI.
+===================================================== */
+
+.portal-visual {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+.portal-screen {
+    position: relative;
+    width: min(610px, 100%);
+    height: 360px;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #11182a;
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 28px 70px rgba(7,10,48,.35);
+    transform: perspective(1100px) rotateY(-2deg) rotateX(1deg);
+    transition: transform .45s ease, box-shadow .45s ease;
+}
+
+.portal-screen:hover {
+    transform: perspective(1100px) rotateY(0) rotateX(0) translateY(-4px);
+    box-shadow: 0 35px 80px rgba(7,10,48,.42);
+}
+
+.screen-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 38px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 15px;
+    background: #0d1323;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.screen-top span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #727c9f;
+}
+
+/* Portal sidebar */
+.portal-screen::before {
+    content: "Student\A Assessment Portal\A\A STUDENT PORTAL\A\A ▦  Dashboard\A\A 📚  My Papers\A\A ▣  Model Papers\A\A ▤  Past Papers\A\A ◫  My Progress\A\A 🔔  Announcements\A\A ◉  Support";
+    white-space: pre;
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 38px;
+    bottom: 0;
+    width: 155px;
+    padding: 17px 13px;
+    color: #aeb6d3;
+    background: #121a2b;
+    border-right: 1px solid rgba(255,255,255,.07);
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: .05px;
+}
+
+.portal-screen::after {
+    content: "Dashboard\A Welcome back\A\A 01     02     03\A\A      Your Learning Progress\A\A      Recent Assessments        Performance";
+    white-space: pre;
+    position: absolute;
+    z-index: 4;
+    left: 155px;
+    right: 0;
+    top: 38px;
+    bottom: 0;
+    padding: 18px 20px;
+    color: #eef0ff;
+    background: linear-gradient(145deg,#20295d,#171d42);
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 2.05;
+}
+
+.screen-content {
+    position: absolute;
+    z-index: 6;
+    left: 176px;
+    right: 18px;
+    top: 95px;
+    bottom: 18px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 64px 1fr;
+    gap: 10px;
+}
+
+.fake-stat {
+    min-width: 0;
+    border-radius: 10px;
+    background: linear-gradient(145deg,#323b83,#28306c);
+    border: 1px solid rgba(255,255,255,.06);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.fake-stat::after {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 5px;
+    margin: 16px 12px;
+    border-radius: 5px;
+    background: rgba(255,255,255,.18);
+}
+
+.fake-chart {
+    grid-column: 1 / -1;
+    border-radius: 13px;
+    background:
+        linear-gradient(155deg, transparent 49%, rgba(111,96,255,.72) 50%, transparent 51%),
+        linear-gradient(25deg, transparent 49%, rgba(89,82,224,.52) 50%, transparent 51%),
+        #252d69;
+    border: 1px solid rgba(255,255,255,.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.fake-chart::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 18px;
+    height: 1px;
+    background: rgba(255,255,255,.14);
+}
+
+.portal-points {
+    position: absolute;
+    z-index: 12;
+    right: -12px;
+    bottom: 30px;
+    width: 165px;
+    padding: 12px 13px;
+    border-radius: 14px;
+    color: #eef0ff;
+    background: rgba(53,61,125,.96);
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 18px 40px rgba(7,10,48,.28);
+    backdrop-filter: blur(10px);
+}
+
+.portal-points div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.portal-points i {
+    width: 14px;
+    color: #a9a3ff;
+    text-align: center;
+}
+
+.portal-section {
+    overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+    .portal-screen { height: 330px; }
+    .portal-screen::before { width: 135px; font-size: 7px; }
+    .portal-screen::after { left: 135px; font-size: 8px; }
+    .screen-content { left: 154px; }
+}
+
+@media (max-width: 900px) {
+    .portal-visual { min-height: 360px; margin-top: 10px; }
+    .portal-screen {
+        width: min(620px, 100%);
+        height: 330px;
+        transform: none;
+    }
+    .portal-screen:hover { transform: translateY(-3px); }
+}
+
+@media (max-width: 620px) {
+    .portal-visual { min-height: 275px; }
+    .portal-screen {
+        height: 250px;
+        border-radius: 16px;
+    }
+    .screen-top { height: 28px; padding-left: 10px; }
+    .screen-top span { width: 5px; height: 5px; }
+    .portal-screen::before {
+        top: 28px;
+        width: 92px;
+        padding: 10px 8px;
+        font-size: 5px;
+        line-height: 1.05;
+    }
+    .portal-screen::after {
+        left: 92px;
+        top: 28px;
+        padding: 10px;
+        font-size: 5.5px;
+        line-height: 2;
+    }
+    .screen-content {
+        left: 101px;
+        right: 9px;
+        top: 67px;
+        bottom: 9px;
+        grid-template-rows: 38px 1fr;
+        gap: 6px;
+    }
+    .fake-stat { border-radius: 6px; }
+    .fake-stat::after { height: 3px; margin: 9px 7px; }
+    .fake-chart { border-radius: 8px; }
+    .portal-points {
+        right: -3px;
+        bottom: 8px;
+        width: 112px;
+        padding: 6px 8px;
+        border-radius: 9px;
+    }
+    .portal-points div { padding: 3px 0; font-size: 5px; }
+    .portal-points i { width: 9px; }
+}
+
 /* Respect accessibility preferences */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
