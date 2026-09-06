@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drsandaruwanperera.github.io/sandaruwanperera.github.io/sitemap.xml
