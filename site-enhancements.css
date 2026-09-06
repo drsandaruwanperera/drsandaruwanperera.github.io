@@ -1,0 +1,184 @@
+/* =====================================================
+   SITE ENHANCEMENTS / FINAL POLISH
+   Keeps the existing design and adds responsive, accessibility
+   and mobile usability improvements without removing content.
+===================================================== */
+
+html { scroll-padding-top: 88px; }
+
+:focus-visible {
+    outline: 3px solid rgba(64,55,201,.45);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: fixed;
+    left: 16px;
+    top: 12px;
+    z-index: 2000;
+    transform: translateY(-160%);
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 0 10px 25px rgba(33,29,134,.25);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+/* Better large-screen spacing */
+@media (min-width: 1200px) {
+    .container { width: min(1240px, calc(100% - 56px)); }
+    .section { padding-top: 105px; padding-bottom: 105px; }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .nav { gap: 17px; }
+    .nav-link { font-size: 12px; }
+    .hero-container { grid-template-columns: 1fr .9fr; gap: 20px; }
+    .hero h1 { font-size: clamp(38px, 5.4vw, 56px); }
+    .profile-card { right: -12px; width: 235px; }
+    .feature-grid { grid-template-columns: repeat(3,1fr); }
+    .feature-item:nth-child(3) { border-right: 0; }
+}
+
+/* Mobile navigation + layout */
+@media (max-width: 900px) {
+    .header { height: 70px; }
+    .container { width: min(100% - 28px, 760px); }
+    .nav-actions { margin-left: auto; }
+    .portal-btn { padding: 10px 13px; font-size: 11px; }
+    .menu-btn { display: grid; place-items: center; width: 42px; height: 42px; }
+
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: 14px;
+        right: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px;
+        background: rgba(255,255,255,.98);
+        backdrop-filter: blur(18px);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: 0 20px 55px rgba(25,24,95,.16);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px) scale(.98);
+        pointer-events: none;
+        transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+    }
+
+    .nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active { background: var(--light-purple); }
+
+    .nav-link.active::after { display: none; }
+
+    .hero { min-height: auto; }
+    .hero-container {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content { text-align: center; }
+    .hero-content > p { margin-left: auto; margin-right: auto; }
+    .hero-buttons, .hero-features { justify-content: center; }
+    .hero-features { flex-wrap: wrap; }
+    .hero-visual { min-height: 520px; margin-top: 8px; }
+    .profile-card { right: 4%; bottom: 28px; }
+
+    .feature-grid { grid-template-columns: repeat(2,1fr); }
+    .feature-item:nth-child(3) { border-right: 1px solid var(--border); }
+    .feature-item:nth-child(even) { border-right: 0; }
+}
+
+@media (max-width: 620px) {
+    .container { width: min(100% - 22px, 520px); }
+    .brand-text span { display: none; }
+    .brand-text strong { font-size: 13px; }
+    .brand-icon { width: 39px; height: 39px; border-radius: 11px; }
+    .portal-btn { display: none; }
+
+    .hero-container { padding-top: 52px; }
+    .hero h1 {
+        font-size: clamp(35px, 11vw, 49px);
+        letter-spacing: -1.7px;
+    }
+    .hero-content > p { font-size: 14px; line-height: 1.7; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .hero-buttons .btn { width: 100%; }
+    .hero-features { gap: 12px; }
+    .mini-feature { font-size: 10px; }
+
+    .hero-visual { min-height: 475px; }
+    .portrait-circle { width: 360px; height: 360px; bottom: 20px; }
+    .portrait-glow { width: 320px; height: 320px; top: 70px; }
+    .portrait-photo-wrap { width: 320px; height: 405px; }
+    .profile-card {
+        width: min(235px, 78%);
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+        padding: 16px;
+    }
+
+    .feature-grid { grid-template-columns: 1fr; }
+    .feature-item,
+    .feature-item:nth-child(even),
+    .feature-item:nth-child(3) {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+    .feature-item:last-child { border-bottom: 0; }
+
+    .section { padding-top: 70px; padding-bottom: 70px; }
+    .section-heading,
+    .results-heading { gap: 20px; }
+    .section-heading .text-btn,
+    .results-heading-badge { margin-top: 4px; }
+
+    .program-grid,
+    .results-stat-grid,
+    .schedule-list { grid-template-columns: 1fr !important; }
+
+    .btn { min-height: 50px; }
+    .floating-social { right: 12px; bottom: 72px; }
+}
+
+/* Prevent oversized media from creating horizontal scrolling */
+video, iframe { max-width: 100%; }
+
+/* Image quality/performance */
+img { height: auto; }
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
