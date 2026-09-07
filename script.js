@@ -337,6 +337,31 @@
     const footerYear = document.getElementById("footerYear");
     if (footerYear) footerYear.textContent = new Date().getFullYear();
 
+    /* Replace the old compact location row with a real map panel. */
+    const locationCard = document.querySelector(".location-card");
+    if (locationCard) {
+        const mapCard = document.createElement("div");
+        mapCard.className = "location-map-card reveal visible";
+        mapCard.innerHTML = `
+            <iframe
+                title="Sri Lanka location map"
+                loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=79.70,6.70,81.90,9.90&layer=mapnik&marker=7.8731,80.7718">
+            </iframe>
+            <div class="location-map-overlay">
+                <div class="location-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                    <strong>Our Location</strong>
+                    <span>Sri Lanka</span>
+                </div>
+            </div>
+            <a class="location-map-link" href="https://maps.app.goo.gl/1KBf4DMLeGt7fdWQA?g_st=ic" target="_blank" rel="noopener">
+                Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        `;
+        locationCard.replaceWith(mapCard);
+    }
+
     /* DARK / DAY MODE — language selector removed */
     const navActions = document.querySelector(".nav-actions");
 
