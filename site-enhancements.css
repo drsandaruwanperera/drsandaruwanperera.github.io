@@ -62,3 +62,315 @@ html.site-dark .nav-link:hover,html.site-dark .nav-link.active{background:#252d4
 @media (max-width:1100px){.site-controls{gap:6px}.language-option{padding:7px 7px;font-size:10px}}
 @media (max-width:900px){.site-controls{margin-right:2px}.theme-toggle{width:32px;height:32px}.language-switcher{padding:2px}.language-option{padding:6px 7px}}
 @media (max-width:620px){.site-controls{gap:4px}.theme-toggle{width:30px;height:30px;font-size:15px}.language-switcher{display:none}}
+
+/* =====================================================
+   PERMANENT DARK PURPLE VISUAL POLISH
+   - No visible Dark/Day selector
+   - Keep the whole public site visually consistent
+===================================================== */
+html {
+    background:#0b1020 !important;
+    color-scheme:dark !important;
+}
+
+body {
+    background:#0b1020 !important;
+    color:#f3f4ff !important;
+}
+
+/* Remove the visible theme control completely. */
+.site-controls,
+.theme-toggle,
+.language-switcher {
+    display:none !important;
+}
+
+/* Student Portal: keep the label, remove lock icons and give it a clear accent. */
+.portal-btn,
+.hero-buttons .btn-outline,
+.portal-white-btn,
+.final-buttons .btn-outline-white {
+    position:relative;
+}
+.portal-btn .fa-lock,
+.hero-buttons .btn-outline .fa-lock,
+.portal-white-btn .fa-lock,
+.final-buttons .btn-outline-white .fa-lock {
+    display:none !important;
+}
+.portal-btn {
+    color:#ffffff !important;
+    background:linear-gradient(135deg,#6d4aff,#8d63ff) !important;
+    border:1px solid rgba(255,255,255,.12) !important;
+    box-shadow:0 10px 28px rgba(109,74,255,.30) !important;
+}
+.portal-btn:hover {
+    background:linear-gradient(135deg,#7b5aff,#9a74ff) !important;
+    box-shadow:0 14px 34px rgba(109,74,255,.38) !important;
+}
+.hero-buttons .btn-outline {
+    color:#e9e5ff !important;
+    background:#151b30 !important;
+    border-color:rgba(141,99,255,.45) !important;
+}
+.hero-buttons .btn-outline:hover {
+    background:#202846 !important;
+    border-color:#8d6bff !important;
+    color:#ffffff !important;
+}
+
+/* Global dark surface hierarchy. */
+.header,
+.feature-strip,
+.programs-section,
+.schedule-section,
+.results-section,
+.about-section,
+.testimonials-section,
+.resources-section,
+.gallery-section,
+.faq-section,
+.contact-section {
+    background:#0b1020 !important;
+    color:#f3f4ff !important;
+}
+
+.header {
+    background:rgba(11,16,32,.96) !important;
+    border-bottom-color:rgba(255,255,255,.08) !important;
+}
+
+.nav-link,
+.brand-text strong,
+h1,h2,h3,h4,h5,h6,
+strong,
+.feature-item strong,
+.program-card h3,
+.schedule-card h3,
+.big-stat-card strong,
+.achievement-card h3,
+.testimonial-card strong,
+.resource-card h3,
+.gallery-card h3,
+.faq-question,
+.contact-card strong,
+.location-card strong {
+    color:#f4f6ff !important;
+}
+
+.brand-text span,
+p,
+.section-heading p,
+.results-heading p,
+.schedule-info p,
+.program-card p,
+.big-stat-card p,
+.achievement-card p,
+.testimonial-card p,
+.resource-card span,
+.gallery-card p,
+.faq-answer,
+.contact-card span,
+.location-card span,
+.feature-item span {
+    color:#b9c1d6 !important;
+}
+
+.eyebrow,
+.text-btn,
+.program-card a,
+.resource-card > span,
+.map-link {
+    color:#9b82ff !important;
+}
+
+/* Feature strip in the screenshot was white; make it a dark premium strip. */
+.feature-strip {
+    background:#10172a !important;
+    border-bottom:1px solid rgba(255,255,255,.08) !important;
+}
+.feature-item {
+    border-color:rgba(255,255,255,.09) !important;
+}
+.feature-item:hover {
+    background:#151d33 !important;
+}
+.feature-icon,
+.program-icon,
+.schedule-icon,
+.big-stat-icon,
+.small-icon,
+.quote-icon,
+.resource-card > i,
+.gallery-visual-icon,
+.contact-icon,
+.location-icon,
+.gallery-heading-icon {
+    background:#1b2340 !important;
+    color:#9b82ff !important;
+    border-color:rgba(155,130,255,.18) !important;
+}
+
+/* Cards: no bright white rectangles. */
+.program-card,
+.schedule-card,
+.big-stat-card,
+.achievement-card,
+.testimonial-card,
+.resource-card,
+.gallery-card,
+.faq-item,
+.contact-card,
+.profile-card,
+.results-heading-badge {
+    background:#121a2d !important;
+    border-color:rgba(255,255,255,.09) !important;
+    box-shadow:0 14px 38px rgba(0,0,0,.22) !important;
+    color:#f3f4ff !important;
+}
+
+.program-card:hover,
+.schedule-card:hover,
+.big-stat-card:hover,
+.achievement-card:hover,
+.testimonial-card:hover,
+.resource-card:hover,
+.gallery-card:hover,
+.contact-card:hover {
+    background:#18223b !important;
+    border-color:rgba(141,107,255,.35) !important;
+}
+
+/* FAQ rows and plus icons remain readable on dark background. */
+.faq-item {
+    background:#121a2d !important;
+    border-color:rgba(255,255,255,.08) !important;
+}
+.faq-question {
+    color:#f4f6ff !important;
+}
+.faq-question i {
+    color:#9b82ff !important;
+}
+.faq-answer {
+    color:#b9c1d6 !important;
+}
+
+/* Location: turn the plain white card into a dark map-style panel. */
+.location-card {
+    position:relative !important;
+    overflow:hidden !important;
+    background:
+        radial-gradient(circle at 72% 35%,rgba(126,94,255,.20),transparent 20%),
+        linear-gradient(135deg,#121a2d 0%,#151f37 55%,#11182b 100%) !important;
+    border:1px solid rgba(141,107,255,.25) !important;
+    color:#f4f6ff !important;
+    box-shadow:0 16px 42px rgba(0,0,0,.25) !important;
+}
+.location-card::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.30;
+    background:
+        linear-gradient(24deg,transparent 47%,rgba(155,130,255,.20) 48%,transparent 50%),
+        linear-gradient(155deg,transparent 44%,rgba(255,255,255,.10) 45%,transparent 47%),
+        linear-gradient(80deg,transparent 62%,rgba(255,255,255,.08) 63%,transparent 65%),
+        linear-gradient(10deg,transparent 25%,rgba(255,255,255,.07) 26%,transparent 27%);
+    pointer-events:none;
+}
+.location-card::after {
+    content:"";
+    position:absolute;
+    width:15px;
+    height:15px;
+    right:27%;
+    top:37%;
+    border-radius:50% 50% 50% 0;
+    background:#8d6bff;
+    box-shadow:0 0 0 7px rgba(141,107,255,.14),0 0 28px rgba(141,107,255,.55);
+    transform:rotate(-45deg);
+    pointer-events:none;
+}
+.location-content,
+.map-link {
+    position:relative;
+    z-index:2;
+}
+.location-icon {
+    background:#211c45 !important;
+    color:#b09cff !important;
+}
+.location-card strong,
+.location-card span {
+    color:#f4f6ff !important;
+}
+.location-card .map-link {
+    color:#b09cff !important;
+}
+
+/* Remove the temporary gallery placeholder box. */
+.gallery-note {
+    display:none !important;
+}
+
+/* Gallery cards should look intentional in the dark palette. */
+.gallery-photo.gallery-card {
+    background:linear-gradient(145deg,#151d33,#11182b) !important;
+    border-color:rgba(141,107,255,.18) !important;
+}
+.gallery-card .gallery-visual-icon {
+    background:#211c45 !important;
+}
+.gallery-overlay {
+    background:linear-gradient(180deg,transparent,rgba(5,8,20,.90)) !important;
+}
+
+/* About / hero support elements. */
+.profile-card {
+    background:rgba(18,26,45,.96) !important;
+    border-color:rgba(141,107,255,.24) !important;
+}
+.profile-card h3 { color:#f4f6ff !important; }
+.profile-card > p { color:#aeb7cf !important; }
+.profile-program { color:#f0f2ff !important; }
+.profile-program i { color:#9b82ff !important; }
+
+/* Inputs, if any are added later, should also match. */
+input,textarea,select {
+    background:#11182b !important;
+    color:#f4f6ff !important;
+    border-color:#303b56 !important;
+}
+input::placeholder,textarea::placeholder { color:#78849e !important; }
+
+/* Mobile navigation must also stay dark. */
+.nav {
+    background:rgba(15,22,38,.98) !important;
+    border-color:#2a354d !important;
+    box-shadow:0 20px 55px rgba(0,0,0,.34) !important;
+}
+.nav-link:hover,
+.nav-link.active {
+    background:#222d48 !important;
+    color:#ffffff !important;
+}
+.menu-btn { color:#f4f6ff !important; }
+
+/* Keep the CTA/footer dark and readable. */
+.footer,
+footer {
+    background:#080d19 !important;
+    color:#f4f6ff !important;
+}
+.footer p,
+.footer a { color:#aeb7cc !important; }
+.footer h4 { color:#f4f6ff !important; }
+.footer-bottom { border-top-color:rgba(255,255,255,.08) !important; }
+
+/* Do not hide the Student Portal itself on mobile; only the header button was intentionally removed there. */
+@media (max-width:620px){
+    .portal-btn{display:none !important;}
+    .portal-white-btn,
+    .final-buttons .btn-outline-white{display:inline-flex !important;}
+}
