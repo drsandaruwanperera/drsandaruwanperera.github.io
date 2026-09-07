@@ -161,3 +161,60 @@ document.querySelectorAll("img").forEach(img => {
 const footerYear = document.getElementById("footerYear");
 if (footerYear) footerYear.textContent = new Date().getFullYear();
 updateActiveNavigation();
+
+/* =====================================================
+   HEADER THEME + LANGUAGE CONTROL
+   ===================================================== */
+(() => {
+    const navActions = document.querySelector(".nav-actions");
+    if (!navActions || document.getElementById("siteLanguageControl")) return;
+
+    const control = document.createElement("div");
+    control.className = "site-controls";
+    control.id = "siteLanguageControl";
+    control.innerHTML = `
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fa-regular fa-moon"></i>
+        </button>
+        <div class="language-switcher" role="group" aria-label="Language selector">
+            <button type="button" class="language-option active" data-language="en">English</button>
+            <button type="button" class="language-option" data-language="si">සිංහල</button>
+            <button type="button" class="language-option" data-language="ta">தமிழ்</button>
+        </div>
+    `;
+
+    navActions.insertBefore(control, navActions.firstChild);
+
+    const savedTheme = localStorage.getItem("siteTheme");
+    if (savedTheme === "dark") document.documentElement.classList.add("site-dark");
+
+    const themeToggle = document.getElementById("themeToggle");
+    const updateThemeIcon = () => {
+        const dark = document.documentElement.classList.contains("site-dark");
+        themeToggle.innerHTML = dark
+            ? '<i class="fa-regular fa-sun"></i>'
+            : '<i class="fa-regular fa-moon"></i>';
+        themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Toggle dark mode");
+        themeToggle.title = dark ? "Switch to light mode" : "Toggle dark mode";
+    };
+    themeToggle.addEventListener("click", () => {
+        const dark = document.documentElement.classList.toggle("site-dark");
+        localStorage.setItem("siteTheme", dark ? "dark" : "light");
+        updateThemeIcon();
+    });
+    updateThemeIcon();
+
+    const languageButtons = control.querySelectorAll(".language-option");
+    const language = localStorage.getItem("siteLanguage") || "en";
+    languageButtons.forEach(button => button.classList.toggle("active", button.dataset.language === language));
+    document.documentElement.lang = language;
+
+    languageButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const selected = button.dataset.language;
+            languageButtons.forEach(item => item.classList.toggle("active", item === button));
+            localStorage.setItem("siteLanguage", selected);
+            document.documentElement.lang = selected;
+        });
+    });
+})();
