@@ -18,7 +18,6 @@ html { scroll-padding-top: 88px; }
 .container{width:min(100% - 22px,520px)}.brand-text span{display:none}.brand-text strong{font-size:13px}.brand-icon{width:39px;height:39px;border-radius:11px}.portal-btn{display:none}
 .hero-container{padding-top:52px}.hero h1{font-size:clamp(35px,11vw,49px);letter-spacing:-1.7px}.hero-content>p{font-size:14px;line-height:1.7}.hero-buttons{flex-direction:column;align-items:stretch}.hero-buttons .btn{width:100%}.hero-features{gap:12px}.mini-feature{font-size:10px}
 .hero-visual{min-height:475px}.portrait-circle{width:360px;height:360px;bottom:20px}.portrait-glow{width:320px;height:320px;top:70px}
-/* Circular portrait; keep the information card on the right so it does not cover the face. */
 .portrait-photo-wrap{width:400px;height:400px;left:50%;bottom:20px;transform:translateX(-50%);border-radius:50%;overflow:hidden;z-index:2}.hero-photo{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .profile-card{width:205px;right:0;bottom:42px;transform:none;padding:14px;z-index:6}.profile-card h3{font-size:13px}.profile-card>p{font-size:9px;margin-bottom:10px}.profile-program{font-size:9px;margin-top:7px}
 .feature-grid{grid-template-columns:1fr}.feature-item,.feature-item:nth-child(even),.feature-item:nth-child(3){border-right:0;border-bottom:1px solid var(--border)}.feature-item:last-child{border-bottom:0}
@@ -65,312 +64,64 @@ html.site-dark .nav-link:hover,html.site-dark .nav-link.active{background:#252d4
 
 /* =====================================================
    PERMANENT DARK PURPLE VISUAL POLISH
-   - No visible Dark/Day selector
-   - Keep the whole public site visually consistent
 ===================================================== */
-html {
-    background:#0b1020 !important;
-    color-scheme:dark !important;
-}
+html{background:#0b1020!important;color-scheme:dark!important}
+body{background:#0b1020!important;color:#f3f4ff!important}
+.site-controls,.theme-toggle,.language-switcher{display:none!important}
+.portal-btn,.hero-buttons .btn-outline,.portal-white-btn,.final-buttons .btn-outline-white{position:relative}
+.portal-btn .fa-lock,.hero-buttons .btn-outline .fa-lock,.portal-white-btn .fa-lock,.final-buttons .btn-outline-white .fa-lock{display:none!important}
+.portal-btn{color:#fff!important;background:linear-gradient(135deg,#6d4aff,#8d63ff)!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 10px 28px rgba(109,74,255,.30)!important}
+.portal-btn:hover{background:linear-gradient(135deg,#7b5aff,#9a74ff)!important;box-shadow:0 14px 34px rgba(109,74,255,.38)!important}
+.hero-buttons .btn-outline{color:#e9e5ff!important;background:#151b30!important;border-color:rgba(141,99,255,.45)!important}
+.hero-buttons .btn-outline:hover{background:#202846!important;border-color:#8d6bff!important;color:#fff!important}
+.header,.feature-strip,.programs-section,.schedule-section,.results-section,.about-section,.testimonials-section,.resources-section,.gallery-section,.faq-section,.contact-section{background:#0b1020!important;color:#f3f4ff!important}
+.header{background:rgba(11,16,32,.96)!important;border-bottom-color:rgba(255,255,255,.08)!important}
+.nav-link,.brand-text strong,h1,h2,h3,h4,h5,h6,strong,.feature-item strong,.program-card h3,.schedule-card h3,.big-stat-card strong,.achievement-card h3,.testimonial-card strong,.resource-card h3,.gallery-card h3,.faq-question,.contact-card strong,.location-card strong{color:#f4f6ff!important}
+.brand-text span,p,.section-heading p,.results-heading p,.schedule-info p,.program-card p,.big-stat-card p,.achievement-card p,.testimonial-card p,.resource-card span,.gallery-card p,.faq-answer,.contact-card span,.location-card span,.feature-item span{color:#b9c1d6!important}
+.eyebrow,.text-btn,.program-card a,.resource-card>span,.map-link{color:#9b82ff!important}
+.feature-strip{background:#10172a!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+.feature-item{border-color:rgba(255,255,255,.09)!important}.feature-item:hover{background:#151d33!important}
+.feature-icon,.program-icon,.schedule-icon,.big-stat-icon,.small-icon,.quote-icon,.resource-card>i,.gallery-visual-icon,.contact-icon,.location-icon,.gallery-heading-icon{background:#1b2340!important;color:#9b82ff!important;border-color:rgba(155,130,255,.18)!important}
+.program-card,.schedule-card,.big-stat-card,.achievement-card,.testimonial-card,.resource-card,.gallery-card,.faq-item,.contact-card,.profile-card,.results-heading-badge{background:#121a2d!important;border-color:rgba(255,255,255,.09)!important;box-shadow:0 14px 38px rgba(0,0,0,.22)!important;color:#f3f4ff!important}
+.program-card:hover,.schedule-card:hover,.big-stat-card:hover,.achievement-card:hover,.testimonial-card:hover,.resource-card:hover,.gallery-card:hover,.contact-card:hover{background:#18223b!important;border-color:rgba(141,107,255,.35)!important}
+.faq-item{background:#121a2d!important;border-color:rgba(255,255,255,.08)!important}.faq-question{color:#f4f6ff!important}.faq-question i{color:#9b82ff!important}.faq-answer{color:#b9c1d6!important}
+.location-card{position:relative!important;overflow:hidden!important;background:radial-gradient(circle at 72% 35%,rgba(126,94,255,.20),transparent 20%),linear-gradient(135deg,#121a2d 0%,#151f37 55%,#11182b 100%)!important;border:1px solid rgba(141,107,255,.25)!important;color:#f4f6ff!important;box-shadow:0 16px 42px rgba(0,0,0,.25)!important}
+.location-card::before{content:"";position:absolute;inset:0;opacity:.30;background:linear-gradient(24deg,transparent 47%,rgba(155,130,255,.20) 48%,transparent 50%),linear-gradient(155deg,transparent 44%,rgba(255,255,255,.10) 45%,transparent 47%),linear-gradient(80deg,transparent 62%,rgba(255,255,255,.08) 63%,transparent 65%),linear-gradient(10deg,transparent 25%,rgba(255,255,255,.07) 26%,transparent 27%);pointer-events:none}
+.location-card::after{content:"";position:absolute;width:15px;height:15px;right:27%;top:37%;border-radius:50% 50% 50% 0;background:#8d6bff;box-shadow:0 0 0 7px rgba(141,107,255,.14),0 0 28px rgba(141,107,255,.55);transform:rotate(-45deg);pointer-events:none}
+.location-content,.map-link{position:relative;z-index:2}.location-icon{background:#211c45!important;color:#b09cff!important}.location-card strong,.location-card span{color:#f4f6ff!important}.location-card .map-link{color:#b09cff!important}
+.gallery-note{display:none!important}.gallery-photo.gallery-card{background:linear-gradient(145deg,#151d33,#11182b)!important;border-color:rgba(141,107,255,.18)!important}.gallery-card .gallery-visual-icon{background:#211c45!important}.gallery-overlay{background:linear-gradient(180deg,transparent,rgba(5,8,20,.90))!important}
+.profile-card{background:rgba(18,26,45,.96)!important;border-color:rgba(141,107,255,.24)!important}.profile-card h3{color:#f4f6ff!important}.profile-card>p{color:#aeb7cf!important}.profile-program{color:#f0f2ff!important}.profile-program i{color:#9b82ff!important}
+input,textarea,select{background:#11182b!important;color:#f4f6ff!important;border-color:#303b56!important}input::placeholder,textarea::placeholder{color:#78849e!important}
+.nav{background:rgba(15,22,38,.98)!important;border-color:#2a354d!important;box-shadow:0 20px 55px rgba(0,0,0,.34)!important}.nav-link:hover,.nav-link.active{background:#222d48!important;color:#fff!important}.menu-btn{color:#f4f6ff!important}
+.footer,footer{background:#080d19!important;color:#f4f6ff!important}.footer p,.footer a{color:#aeb7cc!important}.footer h4{color:#f4f6ff!important}.footer-bottom{border-top-color:rgba(255,255,255,.08)!important}
+@media (max-width:620px){.portal-btn{display:none!important}.portal-white-btn,.final-buttons .btn-outline-white{display:inline-flex!important}}
 
-body {
-    background:#0b1020 !important;
-    color:#f3f4ff !important;
-}
+/* =====================================================
+   FINAL DARK LAYOUT REFINEMENTS
+===================================================== */
 
-/* Remove the visible theme control completely. */
-.site-controls,
-.theme-toggle,
-.language-switcher {
-    display:none !important;
-}
+/* 1. FAQ: remove the large framed/boxed appearance and keep only clean rows. */
+.faq-list{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.faq-item{border-left:0!important;border-right:0!important;border-radius:0!important;box-shadow:none!important}
+.faq-item:first-child{border-top:1px solid rgba(255,255,255,.08)!important}
+.faq-item:last-child{border-bottom:1px solid rgba(255,255,255,.08)!important}
+.faq-question{background:transparent!important}
 
-/* Student Portal: keep the label, remove lock icons and give it a clear accent. */
-.portal-btn,
-.hero-buttons .btn-outline,
-.portal-white-btn,
-.final-buttons .btn-outline-white {
-    position:relative;
-}
-.portal-btn .fa-lock,
-.hero-buttons .btn-outline .fa-lock,
-.portal-white-btn .fa-lock,
-.final-buttons .btn-outline-white .fa-lock {
-    display:none !important;
-}
-.portal-btn {
-    color:#ffffff !important;
-    background:linear-gradient(135deg,#6d4aff,#8d63ff) !important;
-    border:1px solid rgba(255,255,255,.12) !important;
-    box-shadow:0 10px 28px rgba(109,74,255,.30) !important;
-}
-.portal-btn:hover {
-    background:linear-gradient(135deg,#7b5aff,#9a74ff) !important;
-    box-shadow:0 14px 34px rgba(109,74,255,.38) !important;
-}
-.hero-buttons .btn-outline {
-    color:#e9e5ff !important;
-    background:#151b30 !important;
-    border-color:rgba(141,99,255,.45) !important;
-}
-.hero-buttons .btn-outline:hover {
-    background:#202846 !important;
-    border-color:#8d6bff !important;
-    color:#ffffff !important;
-}
+/* 2. Remove the floating profile information card from the hero. */
+.profile-card{display:none!important}
 
-/* Global dark surface hierarchy. */
-.header,
-.feature-strip,
-.programs-section,
-.schedule-section,
-.results-section,
-.about-section,
-.testimonials-section,
-.resources-section,
-.gallery-section,
-.faq-section,
-.contact-section {
-    background:#0b1020 !important;
-    color:#f3f4ff !important;
-}
+/* 3. Dark-purple feature strip: stronger contrast, wider breathing room and consistent theme. */
+.feature-strip{background:linear-gradient(90deg,#0f1628 0%,#141d34 50%,#0f1628 100%)!important;border-top:1px solid rgba(141,107,255,.10)!important;border-bottom:1px solid rgba(141,107,255,.14)!important}
+.feature-grid{width:min(1240px,calc(100% - 56px));margin:0 auto}
+.feature-item{min-height:112px;padding:22px 24px;border-right:1px solid rgba(255,255,255,.08)!important}
+.feature-item strong{font-size:12px!important}.feature-item span{font-size:10px!important;color:#9fa9c1!important}.feature-icon{width:42px;height:42px;background:#1b2340!important;color:#9b82ff!important;box-shadow:0 8px 22px rgba(0,0,0,.20)!important}
 
-.header {
-    background:rgba(11,16,32,.96) !important;
-    border-bottom-color:rgba(255,255,255,.08) !important;
-}
-
-.nav-link,
-.brand-text strong,
-h1,h2,h3,h4,h5,h6,
-strong,
-.feature-item strong,
-.program-card h3,
-.schedule-card h3,
-.big-stat-card strong,
-.achievement-card h3,
-.testimonial-card strong,
-.resource-card h3,
-.gallery-card h3,
-.faq-question,
-.contact-card strong,
-.location-card strong {
-    color:#f4f6ff !important;
-}
-
-.brand-text span,
-p,
-.section-heading p,
-.results-heading p,
-.schedule-info p,
-.program-card p,
-.big-stat-card p,
-.achievement-card p,
-.testimonial-card p,
-.resource-card span,
-.gallery-card p,
-.faq-answer,
-.contact-card span,
-.location-card span,
-.feature-item span {
-    color:#b9c1d6 !important;
-}
-
-.eyebrow,
-.text-btn,
-.program-card a,
-.resource-card > span,
-.map-link {
-    color:#9b82ff !important;
-}
-
-/* Feature strip in the screenshot was white; make it a dark premium strip. */
-.feature-strip {
-    background:#10172a !important;
-    border-bottom:1px solid rgba(255,255,255,.08) !important;
-}
-.feature-item {
-    border-color:rgba(255,255,255,.09) !important;
-}
-.feature-item:hover {
-    background:#151d33 !important;
-}
-.feature-icon,
-.program-icon,
-.schedule-icon,
-.big-stat-icon,
-.small-icon,
-.quote-icon,
-.resource-card > i,
-.gallery-visual-icon,
-.contact-icon,
-.location-icon,
-.gallery-heading-icon {
-    background:#1b2340 !important;
-    color:#9b82ff !important;
-    border-color:rgba(155,130,255,.18) !important;
-}
-
-/* Cards: no bright white rectangles. */
-.program-card,
-.schedule-card,
-.big-stat-card,
-.achievement-card,
-.testimonial-card,
-.resource-card,
-.gallery-card,
-.faq-item,
-.contact-card,
-.profile-card,
-.results-heading-badge {
-    background:#121a2d !important;
-    border-color:rgba(255,255,255,.09) !important;
-    box-shadow:0 14px 38px rgba(0,0,0,.22) !important;
-    color:#f3f4ff !important;
-}
-
-.program-card:hover,
-.schedule-card:hover,
-.big-stat-card:hover,
-.achievement-card:hover,
-.testimonial-card:hover,
-.resource-card:hover,
-.gallery-card:hover,
-.contact-card:hover {
-    background:#18223b !important;
-    border-color:rgba(141,107,255,.35) !important;
-}
-
-/* FAQ rows and plus icons remain readable on dark background. */
-.faq-item {
-    background:#121a2d !important;
-    border-color:rgba(255,255,255,.08) !important;
-}
-.faq-question {
-    color:#f4f6ff !important;
-}
-.faq-question i {
-    color:#9b82ff !important;
-}
-.faq-answer {
-    color:#b9c1d6 !important;
-}
-
-/* Location: turn the plain white card into a dark map-style panel. */
-.location-card {
-    position:relative !important;
-    overflow:hidden !important;
-    background:
-        radial-gradient(circle at 72% 35%,rgba(126,94,255,.20),transparent 20%),
-        linear-gradient(135deg,#121a2d 0%,#151f37 55%,#11182b 100%) !important;
-    border:1px solid rgba(141,107,255,.25) !important;
-    color:#f4f6ff !important;
-    box-shadow:0 16px 42px rgba(0,0,0,.25) !important;
-}
-.location-card::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    opacity:.30;
-    background:
-        linear-gradient(24deg,transparent 47%,rgba(155,130,255,.20) 48%,transparent 50%),
-        linear-gradient(155deg,transparent 44%,rgba(255,255,255,.10) 45%,transparent 47%),
-        linear-gradient(80deg,transparent 62%,rgba(255,255,255,.08) 63%,transparent 65%),
-        linear-gradient(10deg,transparent 25%,rgba(255,255,255,.07) 26%,transparent 27%);
-    pointer-events:none;
-}
-.location-card::after {
-    content:"";
-    position:absolute;
-    width:15px;
-    height:15px;
-    right:27%;
-    top:37%;
-    border-radius:50% 50% 50% 0;
-    background:#8d6bff;
-    box-shadow:0 0 0 7px rgba(141,107,255,.14),0 0 28px rgba(141,107,255,.55);
-    transform:rotate(-45deg);
-    pointer-events:none;
-}
-.location-content,
-.map-link {
-    position:relative;
-    z-index:2;
-}
-.location-icon {
-    background:#211c45 !important;
-    color:#b09cff !important;
-}
-.location-card strong,
-.location-card span {
-    color:#f4f6ff !important;
-}
-.location-card .map-link {
-    color:#b09cff !important;
-}
-
-/* Remove the temporary gallery placeholder box. */
-.gallery-note {
-    display:none !important;
-}
-
-/* Gallery cards should look intentional in the dark palette. */
-.gallery-photo.gallery-card {
-    background:linear-gradient(145deg,#151d33,#11182b) !important;
-    border-color:rgba(141,107,255,.18) !important;
-}
-.gallery-card .gallery-visual-icon {
-    background:#211c45 !important;
-}
-.gallery-overlay {
-    background:linear-gradient(180deg,transparent,rgba(5,8,20,.90)) !important;
-}
-
-/* About / hero support elements. */
-.profile-card {
-    background:rgba(18,26,45,.96) !important;
-    border-color:rgba(141,107,255,.24) !important;
-}
-.profile-card h3 { color:#f4f6ff !important; }
-.profile-card > p { color:#aeb7cf !important; }
-.profile-program { color:#f0f2ff !important; }
-.profile-program i { color:#9b82ff !important; }
-
-/* Inputs, if any are added later, should also match. */
-input,textarea,select {
-    background:#11182b !important;
-    color:#f4f6ff !important;
-    border-color:#303b56 !important;
-}
-input::placeholder,textarea::placeholder { color:#78849e !important; }
-
-/* Mobile navigation must also stay dark. */
-.nav {
-    background:rgba(15,22,38,.98) !important;
-    border-color:#2a354d !important;
-    box-shadow:0 20px 55px rgba(0,0,0,.34) !important;
-}
-.nav-link:hover,
-.nav-link.active {
-    background:#222d48 !important;
-    color:#ffffff !important;
-}
-.menu-btn { color:#f4f6ff !important; }
-
-/* Keep the CTA/footer dark and readable. */
-.footer,
-footer {
-    background:#080d19 !important;
-    color:#f4f6ff !important;
-}
-.footer p,
-.footer a { color:#aeb7cc !important; }
-.footer h4 { color:#f4f6ff !important; }
-.footer-bottom { border-top-color:rgba(255,255,255,.08) !important; }
-
-/* Do not hide the Student Portal itself on mobile; only the header button was intentionally removed there. */
-@media (max-width:620px){
-    .portal-btn{display:none !important;}
-    .portal-white-btn,
-    .final-buttons .btn-outline-white{display:inline-flex !important;}
-}
+/* 4. Real map panel: same full-width visual treatment as the contact/location row. */
+.location-map-card{position:relative;width:100%;height:310px;overflow:hidden;border-radius:16px;border:1px solid rgba(141,107,255,.24);background:#121a2d;box-shadow:0 18px 48px rgba(0,0,0,.28)}
+.location-map-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;filter:saturate(.88) contrast(.98)}
+.location-map-overlay{position:absolute;left:18px;top:18px;z-index:5;display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:12px;background:rgba(11,16,32,.90);border:1px solid rgba(141,107,255,.25);box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(10px)}
+.location-map-overlay .location-icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#211c45!important;color:#b09cff!important}
+.location-map-overlay strong{display:block;color:#fff!important;font-size:12px}.location-map-overlay span{display:block;color:#b9c1d6!important;font-size:10px;margin-top:1px}
+.location-map-link{position:absolute;right:18px;top:18px;z-index:5;display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border-radius:10px;background:rgba(11,16,32,.90);border:1px solid rgba(141,107,255,.25);color:#b09cff!important;font-size:10px;font-weight:800;backdrop-filter:blur(10px)}
+.location-map-link:hover{background:#1b2340!important;color:#fff!important}
+@media(max-width:620px){.feature-grid{width:100%}.feature-item{padding:18px 16px;min-height:92px}.location-map-card{height:310px;border-radius:13px}.location-map-overlay{left:10px;top:10px;padding:8px 10px}.location-map-link{right:10px;top:10px;padding:8px 10px;font-size:9px}.location-map-overlay .location-icon{width:32px;height:32px}.location-map-overlay strong{font-size:10px}.location-map-overlay span{font-size:8px}}
