@@ -1,0 +1,37 @@
+name: Apply location link update
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-location-link:
+    if: ${{ !contains(github.event.head_commit.message, 'Update location link') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update location link
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('script.js')
+          text = path.read_text()
+          old = 'https://maps.app.goo.gl/1KBf4DMLeGt7fdWQA?g_st=ic'
+          new = 'https://maps.app.goo.gl/bzrYeGjxbVFvLbrd8'
+          if old not in text:
+              raise SystemExit('Old location link not found')
+          path.write_text(text.replace(old, new, 1))
+          PY
+
+      - name: Commit update
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add script.js
+          git commit -m 'Update location link'
+          git push
