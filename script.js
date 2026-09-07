@@ -355,7 +355,7 @@
                     <span>Sri Lanka</span>
                 </div>
             </div>
-            <a class="location-map-link" href="https://maps.app.goo.gl/1KBf4DMLeGt7fdWQA?g_st=ic" target="_blank" rel="noopener">
+            <a class="location-map-link" href="https://maps.app.goo.gl/bzrYeGjxbVFvLbrd8" target="_blank" rel="noopener">
                 Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
         `;
