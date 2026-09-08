@@ -125,3 +125,28 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 .location-map-link{position:absolute;right:18px;top:18px;z-index:5;display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border-radius:10px;background:rgba(11,16,32,.90);border:1px solid rgba(141,107,255,.25);color:#b09cff!important;font-size:10px;font-weight:800;backdrop-filter:blur(10px)}
 .location-map-link:hover{background:#1b2340!important;color:#fff!important}
 @media(max-width:620px){.feature-grid{width:100%}.feature-item{padding:18px 16px;min-height:92px}.location-map-card{height:310px;border-radius:13px}.location-map-overlay{left:10px;top:10px;padding:8px 10px}.location-map-link{right:10px;top:10px;padding:8px 10px;font-size:9px}.location-map-overlay .location-icon{width:32px;height:32px}.location-map-overlay strong{font-size:10px}.location-map-overlay span{font-size:8px}}
+
+
+/* GREEN AQUA ACCENT — screenshot inspired */
+.btn-primary {
+    color: #08131b !important;
+    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 28px rgba(0, 230, 176, .22) !important;
+}
+.btn-primary:hover {
+    color: #061016 !important;
+    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;
+    box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;
+}
+.portal-btn {
+    color: #08131b !important;
+    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 28px rgba(0, 230, 176, .22) !important;
+}
+.portal-btn:hover {
+    color: #061016 !important;
+    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;
+    box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;
+}
