@@ -164,3 +164,16 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 .nav-link.active::after {
     background: #A0FF1A !important;
 }
+
+/* FAQ WIDTH — match the reference screenshot */
+.faq-list {
+    width: 650px !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+@media (max-width: 900px) {
+    .faq-list {
+        width: 100% !important;
+    }
+}
