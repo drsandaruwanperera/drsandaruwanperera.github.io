@@ -150,3 +150,17 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
     background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;
     box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;
 }
+
+
+/* NEON GREEN FONT ACCENT — screenshot inspired */
+.hero h1 span,
+.eyebrow,
+.section-heading .eyebrow,
+.results-heading .eyebrow,
+.feature-item .feature-icon,
+.nav-link.active {
+    color: #A0FF1A !important;
+}
+.nav-link.active::after {
+    background: #A0FF1A !important;
+}
