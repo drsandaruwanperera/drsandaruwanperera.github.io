@@ -1,0 +1,37 @@
+name: FAQ width fix
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set FAQ width
+        run: |
+          cat >> site-enhancements.css <<'EOF'
+
+/* FAQ WIDTH — match the reference screenshot */
+.faq-list {
+    width: 650px !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+@media (max-width: 900px) {
+    .faq-list {
+        width: 100% !important;
+    }
+}
+EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site-enhancements.css
+          git diff --cached --quiet || git commit -m 'Set FAQ width to reference size'
+          git push
