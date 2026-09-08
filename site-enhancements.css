@@ -99,24 +99,16 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 /* =====================================================
    FINAL DARK LAYOUT REFINEMENTS
 ===================================================== */
-
-/* 1. FAQ: remove the large framed/boxed appearance and keep only clean rows. */
 .faq-list{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 .faq-item{border-left:0!important;border-right:0!important;border-radius:0!important;box-shadow:none!important}
 .faq-item:first-child{border-top:1px solid rgba(255,255,255,.08)!important}
 .faq-item:last-child{border-bottom:1px solid rgba(255,255,255,.08)!important}
 .faq-question{background:transparent!important}
-
-/* 2. Remove the floating profile information card from the hero. */
 .profile-card{display:none!important}
-
-/* 3. Dark-purple feature strip: stronger contrast, wider breathing room and consistent theme. */
 .feature-strip{background:linear-gradient(90deg,#0f1628 0%,#141d34 50%,#0f1628 100%)!important;border-top:1px solid rgba(141,107,255,.10)!important;border-bottom:1px solid rgba(141,107,255,.14)!important}
 .feature-grid{width:min(1240px,calc(100% - 56px));margin:0 auto}
 .feature-item{min-height:112px;padding:22px 24px;border-right:1px solid rgba(255,255,255,.08)!important}
 .feature-item strong{font-size:12px!important}.feature-item span{font-size:10px!important;color:#9fa9c1!important}.feature-icon{width:42px;height:42px;background:#1b2340!important;color:#9b82ff!important;box-shadow:0 8px 22px rgba(0,0,0,.20)!important}
-
-/* 4. Real map panel: same full-width visual treatment as the contact/location row. */
 .location-map-card{position:relative;width:100%;height:310px;overflow:hidden;border-radius:16px;border:1px solid rgba(141,107,255,.24);background:#121a2d;box-shadow:0 18px 48px rgba(0,0,0,.28)}
 .location-map-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;filter:saturate(.88) contrast(.98)}
 .location-map-overlay{position:absolute;left:18px;top:18px;z-index:5;display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:12px;background:rgba(11,16,32,.90);border:1px solid rgba(141,107,255,.25);box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(10px)}
@@ -126,54 +118,35 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 .location-map-link:hover{background:#1b2340!important;color:#fff!important}
 @media(max-width:620px){.feature-grid{width:100%}.feature-item{padding:18px 16px;min-height:92px}.location-map-card{height:310px;border-radius:13px}.location-map-overlay{left:10px;top:10px;padding:8px 10px}.location-map-link{right:10px;top:10px;padding:8px 10px;font-size:9px}.location-map-overlay .location-icon{width:32px;height:32px}.location-map-overlay strong{font-size:10px}.location-map-overlay span{font-size:8px}}
 
+.btn-primary{color:#08131b!important;background:linear-gradient(110deg,#99fe1f 0%,#00e6b0 100%)!important;border-color:transparent!important;box-shadow:0 10px 28px rgba(0,230,176,.22)!important}
+.btn-primary:hover{color:#061016!important;background:linear-gradient(110deg,#a8ff35 0%,#18f0bc 100%)!important;box-shadow:0 14px 34px rgba(0,230,176,.30)!important}
+.portal-btn{color:#08131b!important;background:linear-gradient(110deg,#99fe1f 0%,#00e6b0 100%)!important;border-color:transparent!important;box-shadow:0 10px 28px rgba(0,230,176,.22)!important}
+.portal-btn:hover{color:#061016!important;background:linear-gradient(110deg,#a8ff35 0%,#18f0bc 100%)!important;box-shadow:0 14px 34px rgba(0,230,176,.30)!important}
+.hero h1 span,.eyebrow,.section-heading .eyebrow,.results-heading .eyebrow,.feature-item .feature-icon,.nav-link.active{color:#A0FF1A!important}
+.nav-link.active::after{background:#A0FF1A!important}
+.faq-list{width:652px!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
+@media(max-width:900px){.faq-list{width:100%!important}}
 
-/* GREEN AQUA ACCENT — screenshot inspired */
-.btn-primary {
-    color: #08131b !important;
-    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;
-    border-color: transparent !important;
-    box-shadow: 0 10px 28px rgba(0, 230, 176, .22) !important;
-}
-.btn-primary:hover {
-    color: #061016 !important;
-    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;
-    box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;
-}
-.portal-btn {
-    color: #08131b !important;
-    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;
-    border-color: transparent !important;
-    box-shadow: 0 10px 28px rgba(0, 230, 176, .22) !important;
-}
-.portal-btn:hover {
-    color: #061016 !important;
-    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;
-    box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;
-}
-
-
-/* NEON GREEN FONT ACCENT — screenshot inspired */
-.hero h1 span,
-.eyebrow,
-.section-heading .eyebrow,
-.results-heading .eyebrow,
-.feature-item .feature-icon,
-.nav-link.active {
-    color: #A0FF1A !important;
-}
-.nav-link.active::after {
-    background: #A0FF1A !important;
-}
-
-/* FAQ WIDTH — match the reference screenshot */
-.faq-list {
-    width: 652px !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-@media (max-width: 900px) {
-    .faq-list {
-        width: 100% !important;
-    }
-}
+/* =====================================================
+   FAQ REFERENCE DESIGN
+===================================================== */
+.faq-section .faq-grid{display:block!important;width:min(100%,900px)!important;margin-left:auto!important;margin-right:auto!important}
+.faq-section .faq-intro{width:100%!important;max-width:760px!important;margin:0 auto 42px!important;text-align:center!important}
+.faq-section .faq-intro .eyebrow{display:inline-flex!important;align-items:center!important;justify-content:center!important;margin:0 0 18px!important;padding:7px 14px!important;border-radius:999px!important;background:#7448d8!important;color:#fff!important;font-size:11px!important;font-weight:700!important;letter-spacing:0!important}
+.faq-section .faq-intro .eyebrow{font-size:0!important}
+.faq-section .faq-intro .eyebrow::before{content:"FAQS";font-size:11px!important}
+.faq-section .faq-intro h2{margin:0!important;font-size:0!important;line-height:1.04!important;letter-spacing:-1.8px!important;color:#f4f6ff!important;text-align:center!important}
+.faq-section .faq-intro h2 br,.faq-section .faq-intro h2 span{display:none!important}
+.faq-section .faq-intro h2::before{content:"Questions? We've";display:block;font-size:clamp(38px,5vw,52px)!important;font-weight:800!important;line-height:1.04!important;color:#f4f6ff!important}
+.faq-section .faq-intro h2::after{content:"got answers";display:block;font-size:clamp(38px,5vw,52px)!important;font-weight:800!important;line-height:1.04!important;color:#8d5ae8!important}
+.faq-section .faq-intro p{display:none!important}
+.faq-section .faq-list{width:690px!important;max-width:100%!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;gap:18px!important}
+.faq-section .faq-item{width:100%!important;min-height:60px!important;margin:0!important;border:1px solid rgba(129,145,184,.20)!important;border-radius:18px!important;background:#0d1729!important;box-shadow:none!important;overflow:hidden!important}
+.faq-section .faq-item:first-child,.faq-section .faq-item:last-child{border-top:1px solid rgba(129,145,184,.20)!important;border-bottom:1px solid rgba(129,145,184,.20)!important}
+.faq-section .faq-question{width:100%!important;min-height:60px!important;padding:0 20px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;background:transparent!important;color:#eef2ff!important;text-align:left!important}
+.faq-section .faq-question span{color:#e6ebfa!important;font-size:11px!important;font-weight:700!important;line-height:1.45!important}
+.faq-section .faq-question i{flex:0 0 auto!important;color:#9b5cf1!important;font-size:15px!important}
+.faq-section .faq-answer{background:transparent!important;padding:0 20px 18px!important}
+.faq-section .faq-answer p{color:#aeb9d0!important;font-size:12px!important;line-height:1.7!important}
+@media(max-width:900px){.faq-section .faq-grid{width:min(100%,760px)!important}.faq-section .faq-intro{margin-bottom:32px!important}.faq-section .faq-list{width:100%!important}}
+@media(max-width:620px){.faq-section .faq-intro h2::before,.faq-section .faq-intro h2::after{font-size:clamp(32px,10vw,42px)!important;letter-spacing:-1.2px!important}.faq-section .faq-intro .eyebrow{margin-bottom:15px!important}.faq-section .faq-list{gap:13px!important}.faq-section .faq-item{border-radius:15px!important}.faq-section .faq-question{min-height:58px!important;padding:0 15px!important}.faq-section .faq-question span{font-size:10px!important}}
