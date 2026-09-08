@@ -1,0 +1,35 @@
+name: Add green aqua accent
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  add-accent:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add accent styles
+        shell: python
+        run: |
+          from pathlib import Path
+          path = Path('site-enhancements.css')
+          text = path.read_text(encoding='utf-8')
+          marker = '/* GREEN AQUA ACCENT — screenshot inspired */'
+          if marker not in text:
+              text += '''\n\n/* GREEN AQUA ACCENT — screenshot inspired */\n.btn-primary {\n    color: #08131b !important;\n    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;\n    border-color: transparent !important;\n    box-shadow: 0 10px 28px rgba(0, 230, 176, .22) !important;\n}\n.btn-primary:hover {\n    color: #061016 !important;\n    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;\n    box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;\n}\n.portal-btn {\n    color: #08131b !important;\n    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;\n    border-color: transparent !important;\n    box-shadow: 0 10px 28px rgba(0, 230, 176, .22) !important;\n}\n.portal-btn:hover {\n    color: #061016 !important;\n    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;\n    box-shadow: 0 14px 34px rgba(0, 230, 176, .30) !important;\n}\n''' 
+              path.write_text(text, encoding='utf-8')
+
+      - name: Commit accent styles
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site-enhancements.css
+          git diff --cached --quiet || git commit -m "Apply green aqua button accent"
+          git push
