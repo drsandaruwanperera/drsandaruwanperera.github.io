@@ -1,0 +1,4 @@
+/* Visibility override for the reference-style Why Select graphic. */
+.programs-section::before{
+  content:"" !important;
+}
