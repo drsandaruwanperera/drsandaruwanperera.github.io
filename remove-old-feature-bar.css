@@ -1,0 +1,5 @@
+/* Remove the obsolete 4-item feature bar only.
+   The current Why You Should Select section has 5 benefit items and is preserved. */
+.feature-strip:not(:has(.feature-item:nth-child(5))) {
+    display: none !important;
+}
