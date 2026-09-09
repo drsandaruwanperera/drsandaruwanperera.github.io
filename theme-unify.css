@@ -1,0 +1,77 @@
+/* =====================================================
+   GLOBAL DARK-PURPLE THEME UNIFICATION
+===================================================== */
+
+html,
+body,
+main,
+.hero {
+    background: #0b1020 !important;
+    color: #f3f4ff !important;
+}
+
+.hero {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+}
+
+.hero-bg-shape.shape-one {
+    background: radial-gradient(circle, rgba(109,74,255,.22) 0%, rgba(109,74,255,0) 70%) !important;
+    opacity: 1 !important;
+}
+
+.hero-bg-shape.shape-two {
+    background: radial-gradient(circle, rgba(0,230,176,.10) 0%, rgba(0,230,176,0) 70%) !important;
+    opacity: 1 !important;
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content h3,
+.hero-content strong {
+    color: #f4f6ff !important;
+}
+
+.hero-content > p {
+    color: #aeb9d0 !important;
+}
+
+.hero-content .eyebrow {
+    color: #a0ff1a !important;
+}
+
+.hero-features .mini-feature {
+    color: #e8ecfa !important;
+}
+
+.hero-features .mini-feature i {
+    background: #1b2340 !important;
+    color: #a0ff1a !important;
+    border-color: rgba(160,255,26,.18) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.20) !important;
+}
+
+.portrait-glow {
+    background: radial-gradient(circle, rgba(141,107,255,.24) 0%, rgba(141,107,255,0) 70%) !important;
+}
+
+.portrait-circle {
+    background: linear-gradient(135deg, #191537 0%, #28204d 55%, #132b3b 100%) !important;
+    border-color: rgba(141,107,255,.25) !important;
+}
+
+.hero-buttons .btn-outline {
+    background: #151b30 !important;
+    color: #eef2ff !important;
+    border-color: rgba(141,107,255,.45) !important;
+}
+
+.hero-buttons .btn-outline:hover {
+    background: #202846 !important;
+    color: #fff !important;
+}
+
+.floating-social a {
+    box-shadow: 0 10px 24px rgba(0,0,0,.30) !important;
+}
