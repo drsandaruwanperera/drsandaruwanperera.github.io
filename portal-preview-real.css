@@ -1,20 +1,19 @@
 /* REALISTIC STUDENT PORTAL PREVIEW — generic student view, no Grade 11 label */
 .portal-screen::before{
-    content:"Student\\A Assessment Portal\\A\\A STUDENT PORTAL\\A\\A ▦  Dashboard\\A\\A 📚  My Papers\\A\\A ▣  Model Papers\\A\\A ▤  Past Papers\\A\\A ◫  My Progress\\A\\A 🔔  Announcements\\A\\A ◉  Support" !important;
+    content:"Student\A Assessment Portal\A\A STUDENT PORTAL\A\A ▦  Dashboard\A\A 📚  My Papers\A\A ▣  Model Papers\A\A ▤  Past Papers\A\A ◫  My Progress\A\A 🔔  Announcements\A\A ◉  Support" !important;
     white-space:pre !important;
     color:#c5cbea !important;
     background:#111a2d !important;
     width:155px !important;
     font-size:8px !important;
-    line-height:1.12 !important;
+    line-height:1.35 !important;
     padding:17px 13px !important;
     top:38px !important;
     bottom:0 !important;
     border-right:1px solid rgba(255,255,255,.08) !important;
 }
-
 .portal-screen::after{
-    content:"Welcome back, Student 👋\\A\\A Student Dashboard\\A\\A\\A Total Papers          Papers Viewed          Account Status\\A      24                         18                         Active\\A\\A Recent Assessments                         Performance\\A\\A Learning Progress" !important;
+    content:"Welcome back, Student 👋\A\A Student Dashboard\A\A\A Total Papers        Papers Viewed        Account Status\A      24                         18                         Active\A\A Recent Assessments                    Performance\A\A Learning Progress" !important;
     white-space:pre !important;
     left:155px !important;
     top:38px !important;
@@ -26,54 +25,11 @@
     font-size:8px !important;
     line-height:1.65 !important;
 }
-
-.screen-content{
-    left:176px !important;
-    right:18px !important;
-    top:104px !important;
-    bottom:18px !important;
-    grid-template-columns:repeat(3,1fr) !important;
-    grid-template-rows:48px 1fr !important;
-    gap:9px !important;
-}
-.fake-stat{
-    background:linear-gradient(145deg,#343e87,#29316f) !important;
-    border:1px solid rgba(255,255,255,.08) !important;
-    border-radius:9px !important;
-}
-.fake-stat::after{
-    content:"" !important;
-    width:38% !important;
-    height:4px !important;
-    margin:13px 10px !important;
-    background:rgba(255,255,255,.20) !important;
-}
-.fake-chart{
-    background:
-      linear-gradient(155deg,transparent 48%,rgba(122,108,255,.75) 49%,transparent 51%),
-      linear-gradient(25deg,transparent 48%,rgba(79,194,211,.45) 49%,transparent 51%),
-      #252d69 !important;
-    border:1px solid rgba(255,255,255,.07) !important;
-}
-
-.portal-points{
-    right:-10px !important;
-    bottom:28px !important;
-    width:160px !important;
-    background:rgba(57,67,139,.96) !important;
-}
+.screen-content{left:176px !important;right:18px !important;top:104px !important;bottom:18px !important;grid-template-columns:repeat(3,1fr) !important;grid-template-rows:48px 1fr !important;gap:9px !important;}
+.fake-stat{background:linear-gradient(145deg,#343e87,#29316f) !important;border:1px solid rgba(255,255,255,.08) !important;border-radius:9px !important;}
+.fake-stat::after{content:"" !important;width:38% !important;height:4px !important;margin:13px 10px !important;background:rgba(255,255,255,.20) !important;}
+.fake-chart{background:linear-gradient(155deg,transparent 48%,rgba(122,108,255,.75) 49%,transparent 51%),linear-gradient(25deg,transparent 48%,rgba(79,194,211,.45) 49%,transparent 51%),#252d69 !important;border:1px solid rgba(255,255,255,.07) !important;}
+.portal-points{right:-10px !important;bottom:28px !important;width:160px !important;background:rgba(57,67,139,.96) !important;}
 .portal-points div{font-size:8px !important}
-
-@media(max-width:1100px){
-    .portal-screen::before{width:135px !important;font-size:7px !important}
-    .portal-screen::after{left:135px !important;font-size:7px !important}
-    .screen-content{left:154px !important}
-}
-
-@media(max-width:620px){
-    .portal-screen::before{width:92px !important;font-size:5px !important;padding:10px 8px !important}
-    .portal-screen::after{left:92px !important;font-size:5px !important;padding:10px !important}
-    .screen-content{left:101px !important;top:66px !important}
-    .portal-points{width:112px !important}
-    .portal-points div{font-size:5px !important}
-}
+@media(max-width:1100px){.portal-screen::before{width:135px !important;font-size:7px !important}.portal-screen::after{left:135px !important;font-size:7px !important}.screen-content{left:154px !important}}
+@media(max-width:620px){.portal-screen::before{width:92px !important;font-size:5px !important;padding:10px 8px !important}.portal-screen::after{left:92px !important;font-size:5px !important;padding:10px !important}.screen-content{left:101px !important;top:66px !important}.portal-points{width:112px !important}.portal-points div{font-size:5px !important}}
