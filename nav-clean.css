@@ -1,0 +1,48 @@
+/* Clean navigation: no white/blue background blocks. */
+.nav-link,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active,
+html.site-dark .nav-link,
+html.site-dark .nav-link:hover,
+html.site-dark .nav-link:focus,
+html.site-dark .nav-link.active {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #f4f7ff !important;
+    box-shadow: none !important;
+}
+
+.nav-link.active,
+html.site-dark .nav-link.active {
+    color: #A0FF1A !important;
+}
+
+.nav-link.active::after,
+html.site-dark .nav-link.active::after {
+    background: #A0FF1A !important;
+    opacity: 1 !important;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+html.site-dark .nav-link:hover,
+html.site-dark .nav-link:focus-visible {
+    color: #A0FF1A !important;
+}
+
+/* Mobile menu also stays transparent; no rectangular active background. */
+@media (max-width: 900px) {
+    .nav-link,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active,
+    html.site-dark .nav-link,
+    html.site-dark .nav-link:hover,
+    html.site-dark .nav-link:focus,
+    html.site-dark .nav-link.active {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}
