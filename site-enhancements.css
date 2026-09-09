@@ -134,7 +134,6 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 .faq-section .faq-intro{width:100%!important;max-width:760px!important;margin:0 auto 42px!important;text-align:center!important}
 .faq-section .faq-intro .eyebrow{display:inline-flex!important;align-items:center!important;justify-content:center!important;margin:0 0 18px!important;padding:7px 14px!important;border-radius:999px!important;background:#7448d8!important;color:#fff!important;font-size:11px!important;font-weight:700!important;letter-spacing:0!important}
 .faq-section .faq-intro .eyebrow{font-size:0!important}
-.faq-section .faq-intro .eyebrow::before{content:"FAQS";font-size:11px!important}
 .faq-section .faq-intro h2{margin:0!important;font-size:0!important;line-height:1.04!important;letter-spacing:-1.8px!important;color:#f4f6ff!important;text-align:center!important}
 .faq-section .faq-intro h2 br,.faq-section .faq-intro h2 span{display:none!important}
 .faq-section .faq-intro h2::before{content:"Questions? We've";display:block;font-size:clamp(38px,5vw,52px)!important;font-weight:800!important;line-height:1.04!important;color:#f4f6ff!important}
@@ -151,48 +150,20 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 @media(max-width:900px){.faq-section .faq-grid{width:min(100%,760px)!important}.faq-section .faq-intro{margin-bottom:32px!important}.faq-section .faq-list{width:100%!important}}
 @media(max-width:620px){.faq-section .faq-intro h2::before,.faq-section .faq-intro h2::after{font-size:clamp(32px,10vw,42px)!important;letter-spacing:-1.2px!important}.faq-section .faq-intro .eyebrow{margin-bottom:15px!important}.faq-section .faq-list{gap:13px!important}.faq-section .faq-item{border-radius:15px!important}.faq-section .faq-question{min-height:58px!important;padding:0 15px!important}.faq-section .faq-question span{font-size:10px!important}}
 
-/* NAV — clean like the reference */
+/* NAV — clean dark theme */
 .nav-link,
 .nav-link:hover,
 .nav-link:focus,
-.nav-link.active {
-    background: transparent !important;
-    color: #f4f6ff !important;
-}
-.nav-link.active {
-    color: #A0FF1A !important;
-}
-.nav-link.active::after {
-    display: block !important;
-    background: #A0FF1A !important;
-}
-@media (max-width: 900px) {
-    .nav-link,
-    .nav-link:hover,
-    .nav-link:focus,
-    .nav-link.active {
-        background: transparent !important;
-        color: #f4f6ff !important;
-    }
-    .nav-link.active { color: #A0FF1A !important; }
-    .nav-link.active::after { display: block !important; background: #A0FF1A !important; }
-}
+.nav-link.active{background:transparent!important;color:#f4f6ff!important}
+.nav-link.active{color:#A0FF1A!important}
+.nav-link.active::after{background:#A0FF1A!important}
+@media(max-width:900px){.nav-link:hover,.nav-link:focus,.nav-link.active{background:transparent!important;color:#f4f6ff!important}.nav-link.active{color:#A0FF1A!important}}
 
-/* HERO — dark purple, no white/light width */
-.hero {
-    background: radial-gradient(circle at 78% 28%, rgba(112, 79, 255, .16), transparent 32%), linear-gradient(135deg, #0b1020 0%, #10162a 58%, #15172f 100%) !important;
-    color: #f4f6ff !important;
-}
-.hero-bg-shape.shape-one {
-    background: rgba(116, 87, 255, .18) !important;
-    opacity: 1 !important;
-}
-.hero-bg-shape.shape-two {
-    background: rgba(54, 230, 191, .07) !important;
-    opacity: 1 !important;
-}
-.hero h1 { color: #f4f6ff !important; }
-.hero h1 span { color: #A0FF1A !important; }
-.hero-content > p { color: #b9c1d6 !important; }
-.hero .mini-feature span { color: #aeb7cc !important; }
-.hero .mini-feature i { color: #A0FF1A !important; }
+/* FEATURE STRIP — match the dark-purple site theme */
+.feature-strip,
+.feature-strip *{box-sizing:border-box}
+.feature-strip{background:linear-gradient(90deg,#0f1628 0%,#141d34 50%,#0f1628 100%)!important;color:#f4f6ff!important;border-top:1px solid rgba(141,107,255,.10)!important;border-bottom:1px solid rgba(141,107,255,.14)!important;border-radius:0!important}
+.feature-strip .feature-item{background:transparent!important;color:#f4f6ff!important;border-color:rgba(255,255,255,.08)!important}
+.feature-strip .feature-item strong{color:#f4f6ff!important}
+.feature-strip .feature-item span{color:#9fa9c1!important}
+.feature-strip .feature-icon{background:#1b2340!important;color:#A0FF1A!important;border-color:rgba(160,255,26,.18)!important}
