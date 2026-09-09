@@ -150,3 +150,49 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 .faq-section .faq-answer p{color:#aeb9d0!important;font-size:12px!important;line-height:1.7!important}
 @media(max-width:900px){.faq-section .faq-grid{width:min(100%,760px)!important}.faq-section .faq-intro{margin-bottom:32px!important}.faq-section .faq-list{width:100%!important}}
 @media(max-width:620px){.faq-section .faq-intro h2::before,.faq-section .faq-intro h2::after{font-size:clamp(32px,10vw,42px)!important;letter-spacing:-1.2px!important}.faq-section .faq-intro .eyebrow{margin-bottom:15px!important}.faq-section .faq-list{gap:13px!important}.faq-section .faq-item{border-radius:15px!important}.faq-section .faq-question{min-height:58px!important;padding:0 15px!important}.faq-section .faq-question span{font-size:10px!important}}
+
+/* NAV — clean like the reference */
+.nav-link,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    background: transparent !important;
+    color: #f4f6ff !important;
+}
+.nav-link.active {
+    color: #A0FF1A !important;
+}
+.nav-link.active::after {
+    display: block !important;
+    background: #A0FF1A !important;
+}
+@media (max-width: 900px) {
+    .nav-link,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active {
+        background: transparent !important;
+        color: #f4f6ff !important;
+    }
+    .nav-link.active { color: #A0FF1A !important; }
+    .nav-link.active::after { display: block !important; background: #A0FF1A !important; }
+}
+
+/* HERO — dark purple, no white/light width */
+.hero {
+    background: radial-gradient(circle at 78% 28%, rgba(112, 79, 255, .16), transparent 32%), linear-gradient(135deg, #0b1020 0%, #10162a 58%, #15172f 100%) !important;
+    color: #f4f6ff !important;
+}
+.hero-bg-shape.shape-one {
+    background: rgba(116, 87, 255, .18) !important;
+    opacity: 1 !important;
+}
+.hero-bg-shape.shape-two {
+    background: rgba(54, 230, 191, .07) !important;
+    opacity: 1 !important;
+}
+.hero h1 { color: #f4f6ff !important; }
+.hero h1 span { color: #A0FF1A !important; }
+.hero-content > p { color: #b9c1d6 !important; }
+.hero .mini-feature span { color: #aeb7cc !important; }
+.hero .mini-feature i { color: #A0FF1A !important; }
