@@ -1,0 +1,50 @@
+name: Remove nav white active background
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove white nav active background
+        run: |
+          cat >> site-enhancements.css <<'EOF'
+
+/* NAV ACTIVE STATE — no white blocks, keep clean dark nav */
+.nav-link,
+.nav-link:hover,
+.nav-link.active {
+    background: transparent !important;
+    color: #f4f6ff !important;
+}
+.nav-link.active {
+    color: #A0FF1A !important;
+}
+.nav-link.active::after {
+    background: #A0FF1A !important;
+}
+@media (max-width: 900px) {
+    .nav-link:hover,
+    .nav-link.active {
+        background: transparent !important;
+        color: #f4f6ff !important;
+    }
+    .nav-link.active {
+        color: #A0FF1A !important;
+    }
+}
+EOF
+      - name: Commit change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site-enhancements.css
+          git commit -m 'Remove white nav active background'
+          git push
