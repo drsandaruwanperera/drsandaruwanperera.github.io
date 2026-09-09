@@ -1,0 +1,70 @@
+/* Why Select: exact center alignment + subtle background motion */
+
+.feature-strip {
+    background-image:
+        radial-gradient(ellipse 32% 24% at 12% 48%, rgba(111, 76, 204, .18), transparent 72%),
+        radial-gradient(ellipse 30% 25% at 88% 55%, rgba(0, 230, 176, .13), transparent 72%),
+        radial-gradient(circle, rgba(130, 145, 180, .19) 1.2px, transparent 1.8px) !important;
+    background-size: 520px 330px, 520px 330px, 10px 10px !important;
+    animation: whyBackgroundDrift 12s ease-in-out infinite alternate !important;
+}
+
+/* Bar: keep the exact purple -> aqua reference look while adding a slow moving glow. */
+.feature-strip::after {
+    background:
+        radial-gradient(circle, rgba(255,255,255,.13) 1.4px, transparent 1.9px),
+        linear-gradient(100deg, #4f2b9f 0%, #245f9f 46%, #00a997 100%) !important;
+    background-size: 10px 10px, 100% 100% !important;
+    animation: whyBarGlow 5s ease-in-out infinite alternate !important;
+}
+
+/* The bar is top:355px + 92px/2 = 401px. Center every icon on that exact midpoint. */
+.feature-item .feature-icon {
+    top: 401px !important;
+}
+
+/* Make the icon ring breathe gently even before the scroll-driven focus animation takes over. */
+.feature-item .feature-icon {
+    will-change: transform, box-shadow, filter !important;
+}
+
+@keyframes whyBackgroundDrift {
+    0% {
+        background-position: left center, right center, 0 0;
+    }
+    100% {
+        background-position: 34px center, calc(100% - 34px) center, 18px 10px;
+    }
+}
+
+@keyframes whyBarGlow {
+    0% {
+        filter: brightness(.96) saturate(.96);
+        box-shadow: 0 18px 48px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.10);
+    }
+    100% {
+        filter: brightness(1.08) saturate(1.08);
+        box-shadow: 0 20px 58px rgba(0,230,176,.16), inset 0 1px 0 rgba(255,255,255,.16);
+    }
+}
+
+@media (max-width: 900px) {
+    /* Mobile bar: top:375px + 88px/2 = 419px. */
+    .feature-item .feature-icon {
+        top: 419px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    /* Small mobile bar: top:330px + 82px/2 = 371px. */
+    .feature-item .feature-icon {
+        top: 371px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-strip,
+    .feature-strip::after {
+        animation: none !important;
+    }
+}
