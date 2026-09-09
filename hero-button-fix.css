@@ -1,0 +1,32 @@
+/* Move the neon green CTA treatment from Explore Programs to Student Portal. */
+.hero-buttons .btn-primary {
+    color: #f4f7ff !important;
+    background: #151b30 !important;
+    border: 1px solid rgba(141,99,255,.45) !important;
+    box-shadow: none !important;
+}
+.hero-buttons .btn-primary:hover {
+    color: #A0FF1A !important;
+    background: #202846 !important;
+    border-color: #A0FF1A !important;
+    box-shadow: 0 10px 28px rgba(0,230,176,.16) !important;
+}
+.hero-buttons .btn-primary i {
+    color: inherit !important;
+}
+
+.hero-buttons .btn-outline {
+    color: #08131b !important;
+    background: linear-gradient(110deg, #99fe1f 0%, #00e6b0 100%) !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 28px rgba(0,230,176,.22) !important;
+}
+.hero-buttons .btn-outline:hover {
+    color: #061016 !important;
+    background: linear-gradient(110deg, #a8ff35 0%, #18f0bc 100%) !important;
+    border-color: transparent !important;
+    box-shadow: 0 14px 34px rgba(0,230,176,.30) !important;
+}
+.hero-buttons .btn-outline i {
+    color: inherit !important;
+}
