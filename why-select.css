@@ -1,21 +1,4 @@
-name: Add why select section
-on:
-  push:
-    branches:
-      - main
-permissions:
-  contents: write
-jobs:
-  update-css:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Append section styling
-        shell: bash
-        run: |
-          cat >> site-enhancements.css <<'EOF'
-
-/* WHY SELECT DR. SANDARUWAN PERERA — above Programs */
+/* WHY YOU SHOULD SELECT DR. SANDARUWAN PERERA — above Programs */
 .programs-section{
   position:relative!important;
   padding-top:430px!important;
@@ -85,9 +68,3 @@ jobs:
   .programs-section::before{width:calc(100% - 22px);height:285px;padding:28px 14px 0;font-size:clamp(27px,9.5vw,39px);line-height:1.05;border-radius:18px}
   .programs-section::after{top:250px;width:calc(100% - 22px);min-height:150px;border-radius:24px;padding:18px 20px;font-size:11px;line-height:2.05}
 }
-EOF
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site-enhancements.css
-          git diff --cached --quiet || git commit -m 'Add why select section above programs'
-          git push
