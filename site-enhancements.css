@@ -140,7 +140,7 @@ input,textarea,select{background:#11182b!important;color:#f4f6ff!important;borde
 .faq-section .faq-intro h2::before{content:"Questions? We've";display:block;font-size:clamp(38px,5vw,52px)!important;font-weight:800!important;line-height:1.04!important;color:#f4f6ff!important}
 .faq-section .faq-intro h2::after{content:"got answers";display:block;font-size:clamp(38px,5vw,52px)!important;font-weight:800!important;line-height:1.04!important;color:#8d5ae8!important}
 .faq-section .faq-intro p{display:none!important}
-.faq-section .faq-list{width:690px!important;max-width:100%!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;gap:18px!important}
+.faq-section .faq-list{width:650px!important;max-width:100%!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;gap:18px!important}
 .faq-section .faq-item{width:100%!important;min-height:60px!important;margin:0!important;border:1px solid rgba(129,145,184,.20)!important;border-radius:18px!important;background:#0d1729!important;box-shadow:none!important;overflow:hidden!important}
 .faq-section .faq-item:first-child,.faq-section .faq-item:last-child{border-top:1px solid rgba(129,145,184,.20)!important;border-bottom:1px solid rgba(129,145,184,.20)!important}
 .faq-section .faq-question{width:100%!important;min-height:60px!important;padding:0 20px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;background:transparent!important;color:#eef2ff!important;text-align:left!important}
