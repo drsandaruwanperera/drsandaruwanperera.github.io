@@ -1,0 +1,19 @@
+/* Stagger the five existing benefit nodes so scrolling through the section
+   highlights them one-by-one instead of all at once. */
+@supports (animation-timeline: view()) {
+    .feature-item:nth-child(1) .feature-icon {
+        animation-range: entry 0% exit 24% !important;
+    }
+    .feature-item:nth-child(2) .feature-icon {
+        animation-range: entry 16% exit 40% !important;
+    }
+    .feature-item:nth-child(3) .feature-icon {
+        animation-range: entry 32% exit 56% !important;
+    }
+    .feature-item:nth-child(4) .feature-icon {
+        animation-range: entry 48% exit 72% !important;
+    }
+    .feature-item:nth-child(5) .feature-icon {
+        animation-range: entry 64% exit 88% !important;
+    }
+}
