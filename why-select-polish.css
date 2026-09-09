@@ -1,0 +1,18 @@
+/* Final visual/content polish for Why You Should Select section. */
+
+/* Lecturer name must be neon green, not purple. */
+.feature-grid::before {
+    color: #A0FF1A !important;
+}
+
+/* Match the lower benefit labels to the site's education-focused messaging. */
+.feature-item:nth-child(1)::after { content: "Expert guidance & support" !important; }
+.feature-item:nth-child(2)::after { content: "Flexible learning for students" !important; }
+.feature-item:nth-child(3)::after { content: "Proven student success" !important; }
+.feature-item:nth-child(4)::after { content: "Strong exam preparation" !important; }
+.feature-item:nth-child(5)::after { content: "Learn anytime, anywhere" !important; }
+
+/* Keep the green lecturer name readable on every viewport. */
+@media (max-width: 900px) {
+    .feature-grid::before { color: #A0FF1A !important; }
+}
