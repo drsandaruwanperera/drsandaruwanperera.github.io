@@ -1,8 +1,8 @@
 /* Final dark header treatment: remove the white strip behind navigation. */
 html.site-dark .header {
-    background: rgba(11,16,32,.94) !important;
-    border-bottom: 1px solid rgba(255,255,255,.07) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,.16) !important;
+    background: rgba(11,16,32,.97) !important;
+    border-bottom: 0 !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
     backdrop-filter: blur(16px);
 }
 
