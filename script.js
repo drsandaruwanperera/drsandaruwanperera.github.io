@@ -416,5 +416,11 @@
     if (systemTheme.addEventListener) systemTheme.addEventListener("change", onSystemThemeChange);
     else if (systemTheme.addListener) systemTheme.addListener(onSystemThemeChange);
 
+    /* Keep the WhatsApp contact link consistent across floating and footer social buttons. */
+    const whatsappUrl = "https://wa.me/94777771498";
+    document.querySelectorAll('a[aria-label="WhatsApp"], a[title="WhatsApp"]').forEach(link => {
+        link.href = whatsappUrl;
+    });
+
     updateActiveNavigation();
 })();
