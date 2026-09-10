@@ -1,0 +1,41 @@
+/* Final dark header treatment: remove the white strip behind navigation. */
+html.site-dark .header {
+    background: rgba(11,16,32,.94) !important;
+    border-bottom: 1px solid rgba(255,255,255,.07) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,.16) !important;
+    backdrop-filter: blur(16px);
+}
+
+html.site-dark .brand-text strong {
+    color: #f4f7ff !important;
+}
+
+html.site-dark .brand-text span {
+    color: #8f9bb2 !important;
+}
+
+html.site-dark .nav {
+    background: transparent !important;
+}
+
+html.site-dark .nav-link {
+    color: #d8deeb !important;
+}
+
+html.site-dark .nav-link:hover,
+html.site-dark .nav-link:focus {
+    color: #ffffff !important;
+}
+
+html.site-dark .nav-link.active {
+    color: #a6ff2e !important;
+}
+
+html.site-dark .nav-link.active::after {
+    background: #a6ff2e !important;
+    box-shadow: 0 0 10px rgba(166,255,46,.35) !important;
+}
+
+html.site-dark .nav-actions .menu-btn {
+    color: #a6ff2e !important;
+}
