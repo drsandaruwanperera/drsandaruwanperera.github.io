@@ -1,0 +1,31 @@
+/* Clean dark navigation: no panel/shadow, active item uses green text + underline. */
+html.site-dark header .nav {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html.site-dark header .nav-link,
+html.site-dark header .nav-link:hover,
+html.site-dark header .nav-link:focus {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #d8deeb !important;
+}
+
+html.site-dark header .nav-link.active {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #a6ff2e !important;
+}
+
+html.site-dark header .nav-link.active::after {
+    background: #a6ff2e !important;
+    box-shadow: none !important;
+    height: 2px !important;
+    bottom: -9px !important;
+}
+
+html.site-dark header .nav-link:hover {
+    color: #ffffff !important;
+}
