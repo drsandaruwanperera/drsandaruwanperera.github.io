@@ -75,3 +75,262 @@ main,
 .floating-social a {
     box-shadow: 0 10px 24px rgba(0,0,0,.30) !important;
 }
+
+/* =====================================================
+   SITE-WIDE THEME
+===================================================== */
+:root {
+    --theme-bg: #0b1020;
+    --theme-surface: #11182b;
+    --theme-surface-2: #151e35;
+    --theme-border: rgba(141,107,255,.18);
+    --theme-text: #f4f6ff;
+    --theme-muted: #aeb9d0;
+    --theme-primary: #8d6bff;
+    --theme-accent: #a0ff1a;
+}
+
+body {
+    background: var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+.header {
+    background: rgba(11,16,32,.92) !important;
+    border-bottom-color: rgba(141,107,255,.16) !important;
+    box-shadow: 0 10px 35px rgba(0,0,0,.18) !important;
+}
+
+.brand-text strong,
+.nav-link,
+.section-heading h2,
+.section-heading p,
+.about-card h3,
+.program-card h3,
+.why-card h3,
+.schedule-info h3,
+.resource-card h3,
+.gallery-card h3,
+.contact-card,
+.footer,
+.footer strong {
+    color: var(--theme-text) !important;
+}
+
+.brand-text span,
+.nav-link,
+.section-heading p,
+.about-card p,
+.program-card p,
+.why-card p,
+.schedule-info p,
+.resource-card p,
+.gallery-card span,
+.contact-card span,
+.contact-card a,
+.footer p {
+    color: var(--theme-muted) !important;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.text-btn,
+.resource-card a,
+.contact-card a {
+    color: var(--theme-accent) !important;
+}
+
+.nav-link.active::after {
+    background: var(--theme-accent) !important;
+}
+
+.feature-strip,
+.section,
+.schedule-section,
+.results-section,
+.resources-section,
+.gallery-section,
+.about-section,
+.programs-section,
+.why-section {
+    background: var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+.feature-strip {
+    border-bottom-color: var(--theme-border) !important;
+}
+
+.feature-item {
+    border-right-color: var(--theme-border) !important;
+}
+
+.feature-icon,
+.about-icon,
+.program-icon,
+.resource-icon,
+.big-stat-icon,
+.schedule-icon {
+    background: rgba(141,107,255,.12) !important;
+    color: var(--theme-accent) !important;
+}
+
+.about-card,
+.program-card,
+.why-card,
+.schedule-card,
+.resource-card,
+.gallery-card,
+.big-stat-card {
+    background: linear-gradient(145deg, var(--theme-surface-2), var(--theme-surface)) !important;
+    border-color: var(--theme-border) !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,.20) !important;
+}
+
+.about-card:hover,
+.program-card:hover,
+.why-card:hover,
+.schedule-card:hover,
+.resource-card:hover,
+.gallery-card:hover {
+    border-color: rgba(160,255,26,.28) !important;
+    box-shadow: 0 24px 55px rgba(0,0,0,.28) !important;
+}
+
+.program-label,
+.eyebrow {
+    color: var(--theme-accent) !important;
+}
+
+.schedule-tag {
+    background: rgba(160,255,26,.10) !important;
+    color: var(--theme-accent) !important;
+    border-color: rgba(160,255,26,.20) !important;
+}
+
+.portal-section {
+    background: linear-gradient(135deg,#12182b 0%,#181438 48%,#0d2330 100%) !important;
+    border-top: 1px solid var(--theme-border) !important;
+    border-bottom: 1px solid var(--theme-border) !important;
+}
+
+.portal-screen,
+.portal-points > div {
+    background: rgba(17,24,43,.82) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.portal-mini-dashboard strong,
+.portal-mini-dashboard span,
+.portal-points > div {
+    color: var(--theme-text) !important;
+}
+
+.results-section .results-heading-badge,
+.results-section .big-stat-card {
+    border-color: var(--theme-border) !important;
+}
+
+.results-heading-badge {
+    background: var(--theme-surface) !important;
+}
+
+.results-heading-badge strong,
+.big-stat-number {
+    color: var(--theme-accent) !important;
+}
+
+.results-heading-badge span,
+.big-stat-card > span,
+.big-stat-card p {
+    color: var(--theme-muted) !important;
+}
+
+.results-live-showcase,
+.recruitment-added-section {
+    background: transparent !important;
+}
+
+.recruitment-added-section .section-heading h2,
+.recruitment-added-section .section-heading p,
+.teacher-profile-main h3,
+.teacher-profile-main p,
+.parent-card h3,
+.parent-card p,
+.story-request-card h3,
+.story-request-card p,
+.faq-grid .faq-question,
+.faq-grid .faq-answer {
+    color: var(--theme-text) !important;
+}
+
+.teacher-profile-main,
+.teacher-proof,
+.parent-card,
+.story-request-card,
+.faq-grid .faq-item {
+    background: linear-gradient(145deg,var(--theme-surface-2),var(--theme-surface)) !important;
+    border-color: var(--theme-border) !important;
+    box-shadow: 0 16px 42px rgba(0,0,0,.20) !important;
+}
+
+.teacher-proof strong,
+.parent-card > i,
+.story-request-card > div > i,
+.faq-grid .faq-question:after {
+    color: var(--theme-accent) !important;
+}
+
+.teacher-proof span,
+.faq-grid .faq-answer {
+    color: var(--theme-muted) !important;
+}
+
+.gallery-placeholder {
+    min-height: 190px;
+}
+
+.contact-section {
+    background: linear-gradient(145deg,#0b1020,#11182b) !important;
+}
+
+.contact-hero,
+.contact-card {
+    background: linear-gradient(145deg,var(--theme-surface-2),var(--theme-surface)) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.contact-hero h2,
+.contact-hero p {
+    color: var(--theme-text) !important;
+}
+
+.footer {
+    background: #070b16 !important;
+    border-top: 1px solid var(--theme-border) !important;
+}
+
+.footer-social a {
+    background: var(--theme-surface) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.recruitment-results-grid .results-poster-card,
+.recruitment-results-grid .result-proof-card {
+    border-color: var(--theme-border) !important;
+}
+
+.recruitment-whatsapp-fab {
+    background: var(--theme-accent) !important;
+    color: #09100d !important;
+}
+
+@media(max-width:900px){
+    .feature-item { border-right:0 !important; border-bottom:1px solid var(--theme-border) !important; }
+}
+
+@media(max-width:640px){
+    .header { height:70px !important; }
+    .brand-text strong { color:var(--theme-text) !important; }
+}
