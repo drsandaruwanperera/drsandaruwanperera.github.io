@@ -1,22 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
 <title id="title">2025 A/L Accounting Results</title>
-<desc id="desc">2025 A/L Accounting results summary based on the supplied class results poster.</desc>
+<desc id="desc">2025 A/L Accounting results summary based on the supplied results poster.</desc>
 <rect width="900" height="1200" rx="28" fill="#0b1020"/>
 <rect x="28" y="28" width="844" height="1144" rx="22" fill="#11182b" stroke="#4037c9" stroke-width="3"/>
-<circle cx="760" cy="115" r="82" fill="#4037c9" opacity=".28"/>
-<circle cx="120" cy="1070" r="120" fill="#7c3aed" opacity=".16"/>
 <text x="70" y="105" fill="#a6ff2e" font-family="Arial,sans-serif" font-size="25" font-weight="800" letter-spacing="3">RESULTS &amp; SUCCESS</text>
 <text x="70" y="165" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="54" font-weight="900">2025 A/L</text>
 <text x="70" y="225" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="54" font-weight="900">ACCOUNTING RESULTS</text>
 <text x="70" y="270" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="22">Student performance highlights from the supplied results poster</text>
-<rect x="70" y="325" width="350" height="210" rx="24" fill="#4037c9"/>
-<text x="100" y="375" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="22" font-weight="700">A / B</text>
-<text x="100" y="465" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="76" font-weight="900">22%</text>
-<text x="100" y="505" fill="#d9dded" font-family="Arial,sans-serif" font-size="18">Highlighted grade share</text>
-<rect x="480" y="325" width="350" height="210" rx="24" fill="#151f35" stroke="#7c3aed" stroke-width="2"/>
-<text x="510" y="375" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="22" font-weight="700">A – B</text>
-<text x="510" y="465" fill="#a6ff2e" font-family="Arial,sans-serif" font-size="76" font-weight="900">80%</text>
-<text x="510" y="505" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="18">Highlighted grade share</text>
+<rect x="70" y="325" width="760" height="210" rx="24" fill="#151f35" stroke="#7c3aed" stroke-width="2"/>
+<text x="105" y="375" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="22" font-weight="700">A – B</text>
+<text x="105" y="465" fill="#a6ff2e" font-family="Arial,sans-serif" font-size="76" font-weight="900">80%</text>
+<text x="105" y="505" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="18">Highlighted grade share</text>
 <text x="70" y="610" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="32" font-weight="900">Highlighted Ranked Students</text>
 <text x="70" y="648" fill="#aeb8ce" font-family="Arial,sans-serif" font-size="18">23 ranks are visible on the supplied 2025 poster.</text>
 <g font-family="Arial,sans-serif" font-size="22" font-weight="800" text-anchor="middle">
@@ -24,7 +18,7 @@
 <rect x="70" y="690" width="95" height="54" rx="12"/><rect x="180" y="690" width="95" height="54" rx="12"/><rect x="290" y="690" width="95" height="54" rx="12"/><rect x="400" y="690" width="95" height="54" rx="12"/><rect x="510" y="690" width="95" height="54" rx="12"/><rect x="620" y="690" width="95" height="54" rx="12"/><rect x="730" y="690" width="95" height="54" rx="12"/>
 <rect x="70" y="760" width="95" height="54" rx="12"/><rect x="180" y="760" width="95" height="54" rx="12"/><rect x="290" y="760" width="95" height="54" rx="12"/><rect x="400" y="760" width="95" height="54" rx="12"/><rect x="510" y="760" width="95" height="54" rx="12"/><rect x="620" y="760" width="95" height="54" rx="12"/><rect x="730" y="760" width="95" height="54" rx="12"/>
 <rect x="70" y="830" width="95" height="54" rx="12"/><rect x="180" y="830" width="95" height="54" rx="12"/><rect x="290" y="830" width="95" height="54" rx="12"/><rect x="400" y="830" width="95" height="54" rx="12"/><rect x="510" y="830" width="95" height="54" rx="12"/><rect x="620" y="830" width="95" height="54" rx="12"/><rect x="730" y="830" width="95" height="54" rx="12"/>
-<rect x="70" y="900" width="95" height="54" rx="12"/><rect x="180" y="900" width="95" height="54" rx="12"/><rect x="290" y="900" width="95" height="54" rx="12"/>
+<rect x="70" y="900" width="95" height="54" rx="12"/><rect x="180" y="900" width="95" height="54" rx="12"/>
 </g>
 <g fill="#f4f7ff">
 <text x="117" y="726">9</text><text x="227" y="726">10</text><text x="337" y="726">14</text><text x="447" y="726">33</text><text x="557" y="726">36</text><text x="667" y="726">38</text><text x="777" y="726">39</text>
