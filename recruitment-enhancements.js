@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',function(){var s=document.querySelector('#results');if(s){s.setAttribute('data-results-enhanced','true');}});
