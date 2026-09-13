@@ -62,19 +62,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const preview = document.querySelector('.portal-mini-stats');
   if (preview) preview.innerHTML = '<span><b>Model</b> Papers</span><span><b>Live</b> Progress</span><span><b>Online</b> Portal</span>';
 
-  /* 6. Real 2025 result proof supplied by the owner */
+  /* 6. 2025 results graphic intentionally removed from the homepage. */
   const results = document.getElementById('results');
-  if (results && !results.querySelector('.results-live-showcase')) {
+  if (results) {
+    results.querySelectorAll('.results-live-showcase').forEach(el => el.remove());
     const oldHeading = results.querySelector('.results-heading');
     const oldStats = results.querySelector('.results-stat-grid');
-    if (oldHeading) oldHeading.style.display = 'none';
-    if (oldStats) oldStats.style.display = 'none';
-    const wrap = document.createElement('div');
-    wrap.className = 'container results-live-showcase';
-    wrap.innerHTML = '<div class="results-heading recruitment-results-heading"><div><span class="eyebrow">2025 A/L ACCOUNTING RESULTS</span><h2>Results That Show the Standard of Our Teaching</h2><p>2025 A/L Accounting student performance highlights, based on the supplied class results poster.</p></div><div class="results-heading-badge"><i class="fa-solid fa-trophy"></i><div><strong>2025</strong><span>A/L Accounting</span></div></div></div>' +
-      '<div class="recruitment-results-grid"><div class="results-poster-card"><div class="results-poster-frame"><img src="assets/2025-al-results.svg" alt="2025 A/L Accounting student results poster" loading="lazy"></div><div class="results-poster-caption"><i class="fa-solid fa-circle-check"></i><span>2025 A/L Accounting results showcase prepared from the supplied results poster.</span></div></div>' +
-      '<div class="results-proof-panel"><div class="result-proof-card"><span class="result-proof-label">A / B</span><strong>22%</strong><p>Highlighted on the supplied 2025 results poster.</p></div><div class="result-proof-card"><span class="result-proof-label">A – B</span><strong>80%</strong><p>Highlighted on the supplied 2025 results poster.</p></div><div class="result-proof-card"><div class="result-proof-icon"><i class="fa-solid fa-ranking-star"></i></div><strong>23 Ranked Students</strong><p>Ranks highlighted on the poster.</p><div class="rank-list"><span>9</span><span>10</span><span>14</span><span>33</span><span>36</span><span>38</span><span>39</span><span>44</span><span>64</span><span>81</span><span>94</span><span>101</span><span>103</span><span>105</span><span>113</span><span>114</span><span>144</span><span>155</span><span>161</span><span>174</span><span>183</span><span>195</span><span>200</span></div></div><a class="btn btn-primary results-join-btn" href="' + wa('A/L Accounting classes') + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Ask About A/L Classes</a></div></div>';
-    results.querySelector('.container').appendChild(wrap);
+    if (oldHeading) oldHeading.style.display = '';
+    if (oldStats) oldStats.style.display = '';
   }
 
   /* 7. Teacher authority section — factual claims kept conservative */
