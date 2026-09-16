@@ -17,6 +17,9 @@ concurrency:
 jobs:
   update-facebook-feed:
     runs-on: ubuntu-latest
+    env:
+      FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+      FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,9 +43,6 @@ jobs:
 
       - name: Fetch Facebook Page posts
         if: ${{ env.FACEBOOK_PAGE_ID != '' && env.FACEBOOK_PAGE_ACCESS_TOKEN != '' }}
-        env:
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
         run: |
           set -euo pipefail
           curl --fail --silent --show-error --location \
@@ -84,7 +84,8 @@ jobs:
           payload = {
               'updated_at': datetime.now(timezone.utc).isoformat(),
               'page_url': 'https://www.facebook.com/share/1GX47aK3SV/?mibextid=wwXIfr',
-              'posts': posts
+              'posts': posts,
+              'setup_required': False
           }
           Path('assets/facebook-feed.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           PY
@@ -102,9 +103,6 @@ jobs:
           current['setup_required'] = True
           path.write_text(json.dumps(current, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           PY
-        env:
-          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
 
       - name: Commit website feed changes
         run: |
