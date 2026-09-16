@@ -1,0 +1,119 @@
+name: Facebook Live Feed
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: facebook-live-feed
+  cancel-in-progress: true
+
+jobs:
+  update-facebook-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install live feed script
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          tag = '<script src="facebook-feed.js?v=1"></script>'
+          if tag not in text:
+              marker = '</body>'
+              if marker not in text:
+                  raise SystemExit('index.html does not contain </body>')
+              text = text.replace(marker, '  ' + tag + '\n' + marker, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Fetch Facebook Page posts
+        if: ${{ env.FACEBOOK_PAGE_ID != '' && env.FACEBOOK_PAGE_ACCESS_TOKEN != '' }}
+        env:
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            --get "https://graph.facebook.com/v26.0/${FACEBOOK_PAGE_ID}/posts" \
+            --data-urlencode 'fields=id,message,created_time,permalink_url,full_picture,attachments{media,type}' \
+            --data-urlencode 'limit=10' \
+            --data-urlencode "access_token=${FACEBOOK_PAGE_ACCESS_TOKEN}" \
+            -o /tmp/facebook-response.json
+
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          source = json.loads(Path('/tmp/facebook-response.json').read_text(encoding='utf-8'))
+          if 'error' in source:
+              raise SystemExit(source['error'].get('message', 'Facebook Graph API returned an error'))
+
+          posts = []
+          for item in source.get('data', []):
+              attachments = item.get('attachments', {}).get('data', []) if isinstance(item.get('attachments'), dict) else []
+              attachment = attachments[0] if attachments else {}
+              media = attachment.get('media') if isinstance(attachment, dict) else {}
+              media = media if isinstance(media, dict) else {}
+              image = item.get('full_picture')
+              if not image:
+                  image = (media.get('image') or {}).get('src') if isinstance(media.get('image'), dict) else None
+              message = (item.get('message') or '').strip()
+              posts.append({
+                  'id': item.get('id'),
+                  'message': message,
+                  'title': '',
+                  'created_time': item.get('created_time'),
+                  'permalink_url': item.get('permalink_url'),
+                  'image': image,
+                  'type': attachment.get('type', '') if isinstance(attachment, dict) else ''
+              })
+
+          payload = {
+              'updated_at': datetime.now(timezone.utc).isoformat(),
+              'page_url': 'https://www.facebook.com/share/1GX47aK3SV/?mibextid=wwXIfr',
+              'posts': posts
+          }
+          Path('assets/facebook-feed.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Keep setup-safe feed state when credentials are missing
+        if: ${{ env.FACEBOOK_PAGE_ID == '' || env.FACEBOOK_PAGE_ACCESS_TOKEN == '' }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('assets/facebook-feed.json')
+          current = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+          current.setdefault('page_url', 'https://www.facebook.com/share/1GX47aK3SV/?mibextid=wwXIfr')
+          current.setdefault('posts', [])
+          current['setup_required'] = True
+          path.write_text(json.dumps(current, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+        env:
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+
+      - name: Commit website feed changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html assets/facebook-feed.json
+          if git diff --cached --quiet; then
+            echo 'No Facebook feed changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Sync live Facebook feed [skip facebook-feed]'
+          git push
