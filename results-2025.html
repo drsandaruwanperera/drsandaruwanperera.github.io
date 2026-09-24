@@ -79,5 +79,18 @@
     @keyframes districtRankSwipe{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}
     @media(max-width:700px){.district-rank-showcase{padding:22px}.district-rank-head{align-items:flex-start}.district-rank-count{display:none}.district-rank-card{width:125px;min-width:125px}.district-rank-card strong{font-size:36px}}
     @media(prefers-reduced-motion:reduce){.district-rank-track{animation:none;flex-wrap:wrap;width:auto}.district-rank-window{mask-image:none}}
+    .district-rank-track.is-duplicated{will-change:transform}
+    @media(prefers-reduced-motion:reduce){.district-rank-track.is-duplicated{animation:none}}
+  </style>
+  <script>
+    (function(){
+      const track=document.querySelector('.district-rank-track');
+      if(!track || track.dataset.duplicated) return;
+      const cards=Array.from(track.children);
+      cards.forEach(card=>track.appendChild(card.cloneNode(true)));
+      track.dataset.duplicated='true';
+      track.classList.add('is-duplicated');
+    })();
+  </script>
   </style>
 </div>
