@@ -155,3 +155,23 @@ body{background:var(--exact-bg)!important;color:var(--exact-navy)!important}
  .reference-ready-strip{grid-template-columns:1fr!important}
  .footer-grid{grid-template-columns:1fr 1fr!important}
 }
+
+/* Final screenshot correction: force the supplied light reference hierarchy. */
+html.site-light,html.site-light body{background:#f7f9ff!important;color:#0b1548!important}
+html.site-light .header{background:#fff!important;color:#0b1548!important}
+html.site-light .reference-hero h1,
+html.site-light .reference-hero h1 *{color:#0b1548!important;opacity:1!important}
+html.site-light .reference-hero h1 span{color:#5a31ff!important}
+html.site-light .reference-hero h1 em{color:#0aa98d!important}
+html.site-light .reference-hero .hero-content{opacity:1!important;transform:none!important}
+html.site-light main>.why-section,
+html.site-light main>.about-section,
+html.site-light main>.schedule-section,
+html.site-light main>.portal-section,
+html.site-light main>#teacher-profile,
+html.site-light main>#parents,
+html.site-light main>#student-stories,
+html.site-light main>#faq,
+html.site-light main>.recruitment-final-cta,
+html.site-light main>#facebook-updates{display:none!important}
+.reference-hero .hero-buttons .recruitment-join-btn{display:none!important}
