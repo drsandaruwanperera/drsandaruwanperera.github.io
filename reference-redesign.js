@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded',function(){
+  /* Reference homepage is intentionally locked to the supplied light visual direction. */
+  document.documentElement.classList.remove('site-dark');
+  document.documentElement.classList.add('site-light');
+  try { localStorage.setItem('siteTheme','light'); } catch(e) {}
+  document.querySelectorAll('.recruitment-join-btn').forEach(el=>el.remove());
+  document.querySelectorAll('.about-section,.why-section,.schedule-section,.portal-section,#teacher-profile,#parents,#student-stories,#faq,.recruitment-final-cta,#facebook-updates').forEach(el=>el.style.setProperty('display','none','important'));
   const main=document.getElementById('main-content'); if(!main) return;
   const qs=s=>document.querySelector(s);
   const feature=qs('.feature-strip'), resources=qs('#resources'), results=qs('#results'), programs=qs('#programs'), gallery=qs('#gallery'), contact=qs('#contact'), portal=qs('.portal-section'), about=qs('#about'), why=qs('.why-section'), schedule=qs('.schedule-section');
