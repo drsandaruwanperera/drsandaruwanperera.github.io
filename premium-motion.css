@@ -1,0 +1,46 @@
+/* Premium motion layer — subtle, performant, accessibility-friendly */
+:root{--motion-ease:cubic-bezier(.2,.75,.2,1)}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+[data-motion="reveal"]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--motion-ease),transform .7s var(--motion-ease);will-change:opacity,transform}
+[data-motion="reveal"].is-visible{opacity:1;transform:none}
+[data-motion="reveal-left"]{opacity:0;transform:translateX(-28px);transition:opacity .75s var(--motion-ease),transform .75s var(--motion-ease)}
+[data-motion="reveal-left"].is-visible{opacity:1;transform:none}
+[data-motion="reveal-right"]{opacity:0;transform:translateX(28px);transition:opacity .75s var(--motion-ease),transform .75s var(--motion-ease)}
+[data-motion="reveal-right"].is-visible{opacity:1;transform:none}
+.reference-hero,.hero{isolation:isolate}
+.reference-hero:before,.hero:before{content:"";position:absolute;inset:auto auto 8% -8%;width:240px;height:240px;border-radius:50%;background:rgba(97,56,255,.09);filter:blur(8px);animation:motionFloat 8s ease-in-out infinite;pointer-events:none;z-index:0}
+.hero-art,.reference-hero-visual{transition:transform .7s var(--motion-ease)}
+.hero-art:hover,.reference-hero-visual:hover{transform:translateY(-5px)}
+.hero-video{transform:scale(1.015);transition:transform 1.2s var(--motion-ease)}
+.hero:hover .hero-video,.reference-hero:hover .hero-video{transform:scale(1.045)}
+.btn,.portal,.small-btn,.reference-outline-btn,.portal-btn{position:relative;overflow:hidden;transition:transform .25s var(--motion-ease),box-shadow .25s var(--motion-ease)}
+.btn:hover,.portal:hover,.small-btn:hover,.reference-outline-btn:hover,.portal-btn:hover{transform:translateY(-2px)}
+.btn:after,.portal:after,.small-btn:after,.reference-outline-btn:after,.portal-btn:after{content:"";position:absolute;top:-40%;left:-75%;width:45%;height:180%;background:rgba(255,255,255,.42);transform:skewX(-18deg);transition:left .65s var(--motion-ease);pointer-events:none}
+.btn:hover:after,.portal:hover:after,.small-btn:hover:after,.reference-outline-btn:hover:after,.portal-btn:hover:after{left:135%}
+.about-photo img,.sir img,.reference-portrait img{transition:transform .8s var(--motion-ease);transform-origin:center bottom}
+.about-photo:hover img,.sir:hover img,.reference-portrait:hover img{transform:scale(1.025) translateY(-4px)}
+.resource,.resource-card,.program,.program-card,.quote,.testimonial-grid article,.rank-card>div,.about-card,.why-card,.schedule-card{transition:transform .35s var(--motion-ease),box-shadow .35s var(--motion-ease),border-color .35s ease}
+.resource:hover,.resource-card:hover,.program:hover,.program-card:hover,.quote:hover,.testimonial-grid article:hover,.rank-card>div:hover,.about-card:hover,.why-card:hover,.schedule-card:hover{transform:translateY(-7px);box-shadow:0 18px 42px rgba(22,32,75,.13)!important}
+.resource .ico,.resource-icon,.program .ico,.program-icon,.about-icon{transition:transform .35s var(--motion-ease)}
+.resource:hover .ico,.resource-card:hover .resource-icon,.program:hover .ico,.program-card:hover .program-icon,.about-card:hover .about-icon{transform:rotate(-4deg) scale(1.06)}
+.rank-card>div{animation:rankLift 6s ease-in-out infinite}
+.rank-card:nth-child(2n)>div{animation-delay:-1.5s}.rank-card:nth-child(3n)>div{animation-delay:-3s}.rank-card:nth-child(4n)>div{animation-delay:-4.5s}
+.feature-item,.strip-item{transition:background .3s ease,transform .3s var(--motion-ease)}
+.feature-item:hover,.strip-item:hover{transform:translateY(-3px);background:rgba(97,56,255,.035)}
+.gallery-img,.gallery-card{transition:transform .45s var(--motion-ease),box-shadow .45s var(--motion-ease)}
+.gallery-img:hover,.gallery-card:hover{transform:scale(1.025);box-shadow:0 18px 38px rgba(22,32,75,.14)}
+.ready-box,.reference-ready-strip,.contact-hero{overflow:hidden;position:relative}
+.ready-box:before,.reference-ready-strip:before,.contact-hero:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-150px;bottom:-190px;background:rgba(97,56,255,.12);animation:motionFloat 9s ease-in-out infinite reverse;pointer-events:none}
+.eyebrow{transition:letter-spacing .35s ease}
+.section:hover .eyebrow,.resources:hover .eyebrow,.ranks:hover .eyebrow{letter-spacing:.08em}
+@keyframes motionFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(18px,-14px,0)}}
+@keyframes rankLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@media(max-width:760px){
+  [data-motion="reveal"],[data-motion="reveal-left"],[data-motion="reveal-right"]{transform:translateY(18px)}
+  .resource:hover,.resource-card:hover,.program:hover,.program-card:hover,.quote:hover,.testimonial-grid article:hover,.rank-card>div:hover,.about-card:hover,.why-card:hover,.schedule-card:hover{transform:translateY(-4px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  [data-motion="reveal"],[data-motion="reveal-left"],[data-motion="reveal-right"]{opacity:1;transform:none}
+}
