@@ -71,7 +71,7 @@ body{background:var(--exact-bg)!important;color:var(--exact-navy)!important}
 .reference-section-head p{font-size:7px!important;max-width:260px}
 .reference-outline-btn{font-size:7px!important;padding:7px 9px!important}
 .rank-carousel{gap:5px!important}
-.rank-card{flex-basis:20%!important;padding:3px!important}
+.rank-card{flex-basis:12.5%!important;padding:3px!important}
 .rank-card>div{min-height:83px!important;padding:6px!important;gap:6px!important;border-radius:8px!important}
 .rank-avatar{width:42px!important;height:52px!important;flex-basis:42px!important;border-radius:7px!important}
 .rank-avatar:before{width:25px!important;height:25px!important;top:7px!important}
