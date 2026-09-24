@@ -50,4 +50,5 @@
 <script>
 (()=>{const t=document.getElementById('rankTrack'),dots=document.getElementById('dots');let page=0;const per=()=>innerWidth<650?2:innerWidth<900?4:5;const pages=()=>Math.ceil(23/per());for(let i=0;i<pages();i++){const x=document.createElement('i');if(!i)x.className='on';dots.appendChild(x)}function render(){page=(page+pages())%pages();t.style.transform='translateX(-'+page*100+'%)';[...dots.children].forEach((x,i)=>x.classList.toggle('on',i===page))}document.getElementById('prev').onclick=()=>{page--;render()};document.getElementById('next').onclick=()=>{page++;render()};setInterval(()=>{page++;render()},5000);})();
 </script>
+  <script src="facebook-feed.js?v=1"></script>
 </body></html>
