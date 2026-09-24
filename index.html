@@ -67,6 +67,25 @@ body{background:#080f20;color:#f4f7ff}
 @media(max-width:650px){.hero-photo-bg{background-size:auto 88%;background-position:center bottom}}
 
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.9}.hero-video-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#101a31 0%,#101a3150 38%,#101a3120 100%);z-index:1;pointer-events:none}.hero-photo-bg{display:none!important}
+
+/* Premium About section — Option 02 inspired. */
+.about-dark{padding:58px 0!important;background:radial-gradient(circle at 15% 50%,#16284a 0,#0d172c 42%,#080f20 100%)!important;border-top:1px solid #263858;border-bottom:1px solid #263858;overflow:hidden}
+.about-pro{display:grid;grid-template-columns:minmax(300px,430px) 1fr;gap:62px;align-items:center}
+.about-photo{position:relative;border-radius:18px;overflow:hidden;border:1px solid #42547a;background:#111c33;box-shadow:0 24px 60px #0007;min-height:430px}
+.about-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#6d55ff12,#08102055)}
+.about-photo img{width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center top;display:block}
+.about-story .eyebrow{color:#aab9ff}
+.about-story h2{font-size:42px;line-height:1.02;margin:10px 0 16px;color:#f5f7ff}
+.about-story h2 span{color:#7b61ff}
+.about-story p{max-width:650px;color:#aebbd3;font-size:10px;line-height:1.7;margin:0 0 12px}
+.about-story .about-lead{font-size:12px;color:#e0e6f5;line-height:1.55}
+.about-facts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:20px 0 22px}
+.about-facts>div{min-height:58px;border:1px solid #344666;border-radius:11px;background:#101c32cc;padding:9px;display:grid;grid-template-columns:32px 1fr;grid-template-rows:auto auto;column-gap:8px;align-items:center}
+.about-facts i{grid-row:1/3;width:29px;height:29px;border-radius:8px;display:grid;place-items:center;background:#5b42e9;color:#fff;font-size:10px}
+.about-facts>div:nth-child(2) i{background:#0fa987}.about-facts>div:nth-child(3) i{background:#e79817}.about-facts>div:nth-child(4) i{background:#3478e9}
+.about-facts b{font-size:8px;color:#f1f5ff}.about-facts small{font-size:6px;color:#8f9eb9}
+@media(max-width:900px){.about-pro{grid-template-columns:1fr 1.2fr;gap:28px}.about-photo,.about-photo img{min-height:360px}.about-story h2{font-size:31px}}
+@media(max-width:650px){.about-dark{padding:38px 0!important}.about-pro{grid-template-columns:1fr;gap:24px}.about-photo,.about-photo img{min-height:330px}.about-story h2{font-size:32px}.about-facts{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -75,9 +94,21 @@ body{background:#080f20;color:#f4f7ff}
 <section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy"><span class="badge"><i class="fa-solid fa-trophy"></i> SRI LANKA'S TRUSTED COMMERCE EDUCATOR</span><h1>Accounting for a <span class="p">Brighter</span> <span class="t">Future</span></h1><p>Quality teaching, structured learning and continuous support to help students achieve their academic goals in Commerce & Accounting.</p><div class="actions"><a class="btn green" href="https://wa.me/94777771498?text=Hello%20Dr.%20Sandaruwan%2C%20I%20would%20like%20to%20join%20a%20class." target="_blank">Join a Class <i class="fa-solid fa-arrow-right"></i></a><a class="btn outline" href="#programs">Explore Programs</a></div><div class="features"><div class="feat"><i class="fa-solid fa-book-open"></i>Structured<br>Learning</div><div class="feat"><i class="fa-solid fa-users"></i>Expert<br>Guidance</div><div class="feat"><i class="fa-solid fa-chart-line"></i>Exam-Focused<br>Preparation</div><div class="feat"><i class="fa-solid fa-headset"></i>Continuous<br>Support</div></div></div><div class="hero-art"><video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata"><source src="assets/accounting-hero.mp4" type="video/mp4"></video><div class="hero-video-overlay"></div><button class="watch" id="watchIntro" type="button"><i class="fa-solid fa-play"></i>Watch<br>Introduction</button><div class="sir"><img src="assets/sir-photo.png" alt="Dr. Sandaruwan Perera"></div><div class="books"><b>FINANCIAL ACCOUNTING</b><b>MANAGEMENT ACCOUNTING</b><b>BUSINESS STUDIES</b></div></div></div></section>
 <section class="strip"><div class="wrap strip-grid"><div class="strip-item"><i class="fa-solid fa-book-open"></i><div><b>Structured Learning</b><span>Clear & systematic teaching</span></div></div><div class="strip-item"><i class="fa-solid fa-user-graduate"></i><div><b>Expert Guidance</b><span>Student-focused support</span></div></div><div class="strip-item"><i class="fa-solid fa-chart-line"></i><div><b>Exam Preparation</b><span>Focused on performance</span></div></div><div class="strip-item"><i class="fa-solid fa-file-lines"></i><div><b>Model & Past Papers</b><span>Practice resources</span></div></div><div class="strip-item"><i class="fa-solid fa-clipboard-check"></i><div><b>Continuous Assessment</b><span>Track your progress</span></div></div></div></section>
 <section class="section about-dark" id="about">
-  <div class="wrap about-grid">
-    <div><span class="eyebrow">ABOUT DR. SANDARUWAN</span><h2>Commerce & Accounting Education with Structure and Purpose</h2></div>
-    <div class="about-copy"><p>Focused on clear concepts, structured practice and examination preparation for Commerce and Accounting students.</p><p>Use the programs, resources and Student Portal links above to continue your learning journey.</p><a class="btn outline" href="#programs">Explore Programs <i class="fa-solid fa-arrow-right"></i></a></div>
+  <div class="wrap about-pro">
+    <div class="about-photo"><img src="assets/sir-photo.png" alt="Dr. Sandaruwan Perera"></div>
+    <div class="about-story">
+      <span class="eyebrow">ABOUT DR. SANDARUWAN PERERA</span>
+      <h2>Meet the Educator Behind <span>Your Success</span></h2>
+      <p class="about-lead">Dr. Sandaruwan Perera is a Commerce & Accounting educator focused on clear teaching, structured learning and continuous guidance for students.</p>
+      <p>His teaching approach is built around making difficult Commerce and Accounting concepts easier to understand, practise and apply in examinations. The goal is simple: give students a strong foundation, purposeful practice and the confidence to keep improving.</p>
+      <div class="about-facts">
+        <div><i class="fa-solid fa-graduation-cap"></i><b>Commerce & Accounting</b><small>Teaching Specialization</small></div>
+        <div><i class="fa-solid fa-book-open"></i><b>Structured Learning</b><small>Clear & practical teaching</small></div>
+        <div><i class="fa-solid fa-chart-line"></i><b>Exam Focused</b><small>Practice & preparation</small></div>
+        <div><i class="fa-solid fa-headset"></i><b>Student Support</b><small>Guidance throughout the journey</small></div>
+      </div>
+      <a class="btn green" href="#programs">Explore My Programs <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
   </div>
 </section>
 <section class="section resources" id="resources"><div class="wrap"><div class="head"><div><span class="eyebrow"><i class="fa-solid fa-trophy"></i> LEARN SMARTER</span><h2>Your Learning Resources</h2></div><p>Get access to high-quality past papers, model papers, revision notes and video lessons to strengthen your preparation.</p><a class="small-btn" href="https://drsandaruwanperera.lk/studentportal/" target="_blank">View All Resources <i class="fa-solid fa-arrow-right"></i></a></div><div class="resource-grid"><article class="resource"><div class="ico"><i class="fa-solid fa-file-lines"></i></div><h3>Past Papers</h3><p>A/L & O/L past papers with answers</p><div class="resource-visual"></div></article><article class="resource"><div class="ico"><i class="fa-solid fa-book-open"></i></div><h3>Model Papers</h3><p>Practice with structured model papers</p><div class="resource-visual"></div></article><article class="resource"><div class="ico"><i class="fa-solid fa-note-sticky"></i></div><h3>Revision Notes</h3><p>Structured & easy to study</p><div class="resource-visual"></div></article><article class="resource resource-video" id="videoLessons"><button class="resource-hit" type="button" data-open-video aria-label="Open video lessons"></button><div class="ico"><i class="fa-solid fa-play"></i></div><h3>Video Lessons</h3><p>Learn anytime, anywhere</p><div class="resource-visual"></div><span class="resource-action">Watch Video <i class="fa-solid fa-arrow-right"></i></span></article></div></div></section>
