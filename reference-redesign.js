@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded',function(){
   if(portal) portal.classList.add('reference-secondary-section');
   const track=ranks.querySelector('.rank-track'), win=ranks.querySelector('.rank-window'), prev=ranks.querySelector('.rank-prev'), next=ranks.querySelector('.rank-next'), dots=ranks.querySelector('.rank-dots');
   if(track&&win){
-    let page=0; const per=window.innerWidth<700?1:window.innerWidth<1050?2:4; const pages=Math.ceil(track.children.length/per);
+    let page=0; const per=window.innerWidth<700?1:window.innerWidth<900?4:8; const pages=Math.ceil(track.children.length/per);
     for(let i=0;i<pages;i++){const d=document.createElement('span');d.className=i===0?'active':'';dots.appendChild(d)}
     const render=()=>{page=(page+pages)%pages; const offset=page*100; track.style.transform='translateX(-'+offset+'%)'; [...dots.children].forEach((d,i)=>d.classList.toggle('active',i===page))};
     prev.onclick=()=>{page--;render()}; next.onclick=()=>{page++;render()};
