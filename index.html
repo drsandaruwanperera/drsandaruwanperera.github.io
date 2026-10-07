@@ -131,15 +131,36 @@ body{background:#080f20;color:#f4f7ff}
 .legacy-closing p{margin:0;color:#c2ccde;font-size:9px;line-height:1.65}.legacy-closing b{color:#f4f7ff}
 @media(max-width:900px){.legacy-about-grid{grid-template-columns:1fr}.legacy-about-photo{min-height:420px}.legacy-about-photo img{min-height:420px}.legacy-results-head{grid-template-columns:auto 1fr}.legacy-results-head p{grid-column:2}.legacy-achievements{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.legacy-about-head{text-align:left}.legacy-about-intro{font-size:10px}.legacy-about-photo,.legacy-about-photo img{min-height:360px}.legacy-qualification-grid{grid-template-columns:1fr}.legacy-results{padding:15px}.legacy-results-head{grid-template-columns:auto 1fr}.legacy-results-head h3{font-size:15px}.legacy-results-head p{grid-column:1/-1}.legacy-achievements{grid-template-columns:1fr 1fr}.legacy-closing{align-items:flex-start;padding:14px}.legacy-closing p{font-size:8.5px}}
+
+/* Premium cinematic hero */
+.hero{position:relative;min-height:540px;background:#070d1b;isolation:isolate}
+.hero-background-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2;opacity:.86}
+.hero-background-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#070d1bf5 0%,#070d1bd9 32%,#070d1b70 58%,#070d1b45 100%);z-index:-1;pointer-events:none}
+.hero-grid{min-height:540px;position:relative;z-index:2}
+.hero-copy{padding:82px 0 44px;max-width:600px}
+.hero h1{font-size:68px;line-height:.94;letter-spacing:-3.8px;text-shadow:0 8px 35px #0008}
+.hero-copy>p{font-size:14px;max-width:530px;color:#c1cce0}
+.hero-art{background:transparent!important;border-radius:0;min-height:540px}
+.hero-art:before{display:none}
+.hero-art .hero-video-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#070d1b55 0%,transparent 55%,#070d1b25 100%);z-index:1;pointer-events:none}
+.hero-art .sir,.hero-art .books,.hero-art .slogan{display:none}
+.hero .watch{backdrop-filter:blur(12px);background:#101a30cc;color:#fff;border:1px solid #ffffff22;box-shadow:0 15px 40px #0008}
+.hero .watch i{background:linear-gradient(135deg,#7b61ff,#9b6cff);box-shadow:0 0 25px #7b61ff66}
+.hero .badge{background:#101a30b8;backdrop-filter:blur(12px);border-color:#8dff2e66;color:#dce5f8}
+.hero .btn.outline{background:#101a30b8;backdrop-filter:blur(12px);border-color:#ffffff2b;color:#fff}
+.hero .feat{color:#dce5f8}
+.hero .feat i{box-shadow:0 8px 24px #0005}
+@media(max-width:650px){.hero{min-height:650px}.hero-grid{min-height:650px}.hero-copy{padding:52px 0 25px}.hero h1{font-size:48px}.hero-background-video{object-position:center}.hero-background-overlay{background:linear-gradient(180deg,#070d1be8 0%,#070d1b9c 48%,#070d1b70 100%)}.hero-art{min-height:190px}}
 </style>
 
 </head>
 <body>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home"><div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><b>Dr. Sandaruwan Perera</b><span>Commerce & Accounting Education</span></div></a><nav class="links"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#programs">Programs</a><a href="#results">Results</a><a href="#resources">Resources</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav><a class="portal" href="https://drsandaruwanperera.lk/studentportal/" target="_blank" rel="noopener">Student Portal <i class="fa-solid fa-arrow-right"></i></a></div></header>
 <main>
-<section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy"><span class="badge"><i class="fa-solid fa-trophy"></i> SRI LANKA'S TRUSTED COMMERCE EDUCATOR</span><h1>Accounting for a <span class="p">Brighter</span> <span class="t">Future</span></h1><p>Quality teaching, structured learning and continuous support to help students achieve their academic goals in Commerce & Accounting.</p><div class="actions"><a class="btn green" href="https://wa.me/94777771498?text=Hello%20Dr.%20Sandaruwan%2C%20I%20would%20like%20to%20join%20a%20class." target="_blank">Join a Class <i class="fa-solid fa-arrow-right"></i></a><a class="btn outline" href="#programs">Explore Programs</a></div><div class="features"><div class="feat"><i class="fa-solid fa-book-open"></i>Structured<br>Learning</div><div class="feat"><i class="fa-solid fa-users"></i>Expert<br>Guidance</div><div class="feat"><i class="fa-solid fa-chart-line"></i>Exam-Focused<br>Preparation</div><div class="feat"><i class="fa-solid fa-headset"></i>Continuous<br>Support</div></div></div><div class="hero-art">
-<video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/hero-animation.mp4" type="video/mp4"></video>
-<div class="hero-video-overlay"></div><video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata"><source src="assets/accounting-hero.mp4" type="video/mp4"></video><div class="hero-video-overlay"></div><button class="watch" id="watchIntro" type="button"><i class="fa-solid fa-play"></i>Watch<br>Introduction</button><div class="sir"><img src="assets/sir-photo.png" alt="Dr. Sandaruwan Perera"></div><div class="books"><b>FINANCIAL ACCOUNTING</b><b>MANAGEMENT ACCOUNTING</b><b>BUSINESS STUDIES</b></div></div></div></section>
+<section class="hero" id="home">
+<video class="hero-video hero-background-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/hero-animation.mp4" type="video/mp4"></video>
+<div class="hero-background-overlay"></div>
+<div class="wrap hero-grid"><div class="hero-copy"><span class="badge"><i class="fa-solid fa-trophy"></i> SRI LANKA'S TRUSTED COMMERCE EDUCATOR</span><h1>Accounting for a <span class="p">Brighter</span> <span class="t">Future</span></h1><p>Quality teaching, structured learning and continuous support to help students achieve their academic goals in Commerce & Accounting.</p><div class="actions"><a class="btn green" href="https://wa.me/94777771498?text=Hello%20Dr.%20Sandaruwan%2C%20I%20would%20like%20to%20join%20a%20class." target="_blank">Join a Class <i class="fa-solid fa-arrow-right"></i></a><a class="btn outline" href="#programs">Explore Programs</a></div><div class="features"><div class="feat"><i class="fa-solid fa-book-open"></i>Structured<br>Learning</div><div class="feat"><i class="fa-solid fa-users"></i>Expert<br>Guidance</div><div class="feat"><i class="fa-solid fa-chart-line"></i>Exam-Focused<br>Preparation</div><div class="feat"><i class="fa-solid fa-headset"></i>Continuous<br>Support</div></div></div><div class="hero-art"><div class="hero-video-overlay"></div><button class="watch" id="watchIntro" type="button"><i class="fa-solid fa-play"></i>Watch<br>Introduction</button><div class="sir"><img src="assets/sir-photo.png" alt="Dr. Sandaruwan Perera"></div><div class="books"><b>FINANCIAL ACCOUNTING</b><b>MANAGEMENT ACCOUNTING</b><b>BUSINESS STUDIES</b></div></div></div></section>
 <section class="strip"><div class="wrap strip-grid"><div class="strip-item"><i class="fa-solid fa-book-open"></i><div><b>Structured Learning</b><span>Clear & systematic teaching</span></div></div><div class="strip-item"><i class="fa-solid fa-user-graduate"></i><div><b>Expert Guidance</b><span>Student-focused support</span></div></div><div class="strip-item"><i class="fa-solid fa-chart-line"></i><div><b>Exam Preparation</b><span>Focused on performance</span></div></div><div class="strip-item"><i class="fa-solid fa-file-lines"></i><div><b>Model & Past Papers</b><span>Practice resources</span></div></div><div class="strip-item"><i class="fa-solid fa-clipboard-check"></i><div><b>Continuous Assessment</b><span>Track your progress</span></div></div></div></section>
 <section class="section about-dark" id="about">
   <div class="wrap legacy-about">
