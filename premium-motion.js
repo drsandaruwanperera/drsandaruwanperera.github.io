@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded',()=>{
   const watch=document.querySelector('.hero-art .watch');
   if(!hero||!art||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 
+  // Build lightweight 3D depth layers without adding extra image assets.
+  const depthMarkup=`
+    <span class="hero-depth-layer hero-depth-grid" aria-hidden="true"></span>
+    <span class="hero-depth-layer hero-depth-ring" aria-hidden="true"></span>
+    <span class="hero-depth-layer hero-depth-orb" aria-hidden="true"></span>
+    <span class="hero-cursor-glow" aria-hidden="true"></span>
+  `;
+  if(!art.querySelector('.hero-depth-layer')) art.insertAdjacentHTML('afterbegin',depthMarkup);
+  const depthGrid=art.querySelector('.hero-depth-grid');
+  const depthRing=art.querySelector('.hero-depth-ring');
+  const depthOrb=art.querySelector('.hero-depth-orb');
+  const cursorGlow=art.querySelector('.hero-cursor-glow');
+
   let raf=0,px=0,py=0;
   const reset=()=>{
     [art,copy,sir,books,watch].forEach(el=>{if(el)el.style.transform=''});
@@ -41,7 +54,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     sir.style.transform=`translate3d(${x*12}px,${y*7}px,80px) scale(1.02)`;
     books.style.transform=`translate3d(${x*-9}px,${y*-5}px,45px)`;
     watch.style.transform=`translate3d(${x*15}px,${y*8}px,65px)`;
+    depthGrid.style.transform=`translate3d(${x*-7}px,${y*-4}px,15px)`;
+    depthRing.style.transform=`translate3d(${x*18}px,${y*10}px,55px) rotate(${x*8}deg)`;
+    depthOrb.style.transform=`translate3d(${x*-24}px,${y*-14}px,95px) scale(1.06)`;
+    cursorGlow.style.left=`${px-(r.left)}px`;
+    cursorGlow.style.top=`${py-(r.top)}px`;
   };
   hero.addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;if(!raf)raf=requestAnimationFrame(apply)});
-  hero.addEventListener('pointerleave',reset);
+  hero.addEventListener('pointerleave',()=>{
+    [art,copy,sir,books,watch,depthGrid,depthRing,depthOrb].forEach(el=>{if(el)el.style.transform=''});
+    cursorGlow.style.opacity='0';
+  });
+  hero.addEventListener('pointerenter',()=>{cursorGlow.style.opacity='1'});
 });
