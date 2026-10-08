@@ -205,6 +205,17 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-10;ba
 @media(max-width:800px){.hero-copy{transform:none!important}.hero-art{transition:none!important;transform:none!important}.hero-art .sir,.hero-art .books,.hero-art .watch{transform:none!important}.hero-3d-hint{display:none}}
 @media(prefers-reduced-motion:reduce){.hero-art,.hero-video,.hero-copy,.hero-art .sir,.hero-art .books,.hero-art .watch{transition:none!important;transform:none!important}.hero-3d-hint{display:none}}
 </style>
+<style id="hero-3d-cinematic-v2">
+.hero{overflow:hidden}
+.hero-art{background:radial-gradient(circle at 62% 42%,rgba(92,69,255,.18),transparent 28%),linear-gradient(120deg,#dfe8ff,#fff 62%)!important}
+.hero-art .hero-depth-layer{position:absolute;pointer-events:none;z-index:2;will-change:transform;transition:transform .16s cubic-bezier(.22,1,.36,1)}
+.hero-depth-orb{width:110px;height:110px;border-radius:50%;right:26%;top:17%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.9),rgba(105,65,255,.25) 35%,rgba(105,65,255,0) 70%);filter:blur(2px);opacity:.7}
+.hero-depth-ring{width:180px;height:180px;border:1px solid rgba(104,76,255,.22);border-radius:50%;right:4%;top:18%;box-shadow:0 0 45px rgba(104,76,255,.12),inset 0 0 30px rgba(104,76,255,.08)}
+.hero-depth-grid{inset:0;background:linear-gradient(rgba(83,101,190,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(83,101,190,.06) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(90deg,transparent 0%,#000 45%,#000 100%);opacity:.55}
+.hero-cursor-glow{position:absolute;width:180px;height:180px;border-radius:50%;pointer-events:none;z-index:7;background:radial-gradient(circle,rgba(102,67,255,.18),transparent 68%);transform:translate(-50%,-50%);filter:blur(8px);mix-blend-mode:screen}
+@media(max-width:800px){.hero-depth-layer,.hero-cursor-glow{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-depth-layer,.hero-cursor-glow{display:none}}
+</style>
 </head>
 <body>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home"><div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><b>Dr. Sandaruwan Perera</b><span>Commerce & Accounting Education</span></div></a><nav class="links"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#programs">Programs</a><a href="#results">Results</a><a href="#resources">Resources</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav><a class="portal" href="https://drsandaruwanperera.lk/studentportal/" target="_blank" rel="noopener">Student Portal <i class="fa-solid fa-arrow-right"></i></a></div></header>
