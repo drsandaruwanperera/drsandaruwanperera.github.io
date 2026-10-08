@@ -279,16 +279,20 @@ body{background:#070d1c}
 }
 .premium-hero-art{
   position:absolute!important;
-  inset:0!important;
-  width:100%!important;
+  top:0!important;
+  left:50%!important;
+  width:100vw!important;
   height:100%!important;
   min-height:0!important;
+  margin:0!important;
   border:0!important;
   border-radius:0!important;
   background:transparent!important;
   box-shadow:none!important;
   overflow:hidden!important;
-  z-index:-1!important;
+  z-index:0!important;
+  transform:translateX(-50%)!important;
+  pointer-events:none!important;
 }
 .hero-main-video{
   position:absolute!important;
@@ -308,8 +312,8 @@ body{background:#070d1c}
   z-index:1!important;
   pointer-events:none!important;
   background:
-    linear-gradient(90deg,#050a16 0%,rgba(5,10,22,.88) 20%,rgba(5,10,22,.46) 48%,rgba(5,10,22,.12) 100%),
-    linear-gradient(0deg,rgba(5,10,22,.66),transparent 42%,rgba(5,10,22,.22))!important;
+    linear-gradient(90deg,#050a16 0%,rgba(5,10,22,.82) 18%,rgba(5,10,22,.38) 48%,rgba(5,10,22,.08) 100%),
+    linear-gradient(0deg,rgba(5,10,22,.66),transparent 42%,rgba(5,10,22,.20))!important;
 }
 .premium-hero-art .premium-hero-card,
 .hero-video-badge,
