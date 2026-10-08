@@ -250,6 +250,88 @@ body{background:#070d1c}
 .premium-resource-grid{grid-template-columns:repeat(4,1fr)!important}.premium-resource-card{height:245px!important;padding:18px!important;background:linear-gradient(145deg,#101a31,#0b1427)!important;border:1px solid #29395b!important}.premium-resource-card h3{color:#fff!important;font-size:15px!important;margin-top:12px!important}.premium-resource-card p{color:#7f8ea8!important;font-size:8px!important;line-height:1.5!important}.premium-resource-card .ico{width:38px!important;height:38px!important;border-radius:11px!important}.resource-status{position:absolute;right:15px;top:18px;font-size:6px;font-weight:900;letter-spacing:.8px;padding:4px 6px;border-radius:6px}.resource-status.live{color:#9dff38;background:#16311e}.resource-status.soon{color:#8390a8;background:#172138}.premium-resource-card .resource-visual{height:90px!important;bottom:12px!important;background:linear-gradient(135deg,#142440,#0e182b)!important;border-color:#2a3c5d!important}.premium-resource-card .resource-visual span{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#8fa7ff;font-size:14px;font-weight:900;letter-spacing:1px;line-height:1.05}.coming-resource{opacity:.72}.coming-resource .resource-visual span{color:#687791}.premium-resource-card .resource-action{border:0;background:transparent;cursor:pointer}
 @media(max-width:900px){.premium-home-hero .hero-grid{grid-template-columns:1fr}.premium-home-hero .hero-copy{padding:42px 0 20px!important}.premium-hero-art{min-height:470px!important}.path-grid,.coming-grid{grid-template-columns:1fr 1fr}.premium-resource-grid{grid-template-columns:1fr 1fr!important}}
 @media(max-width:650px){.premium-home-hero h1{font-size:40px!important}.premium-hero-art{min-height:400px!important}.premium-hero-card{display:none}.premium-hero-slogan{font-size:12px;right:15px;top:15px}.path-grid,.coming-grid,.premium-resource-grid{grid-template-columns:1fr!important}.hero-audience-pills span{font-size:6px}.premium-home-hero .hero-copy>p{font-size:11px!important}}
+</style><style id="hero-video-redesign">
+/* Hero video: replace the empty framed visual with the existing premium asset. */
+.premium-home-hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(520px,.96fr)!important}
+.premium-hero-art{
+  position:relative!important;
+  min-height:530px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+  transform-style:preserve-3d!important;
+}
+.hero-main-video{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  display:block!important;
+  z-index:1!important;
+  transform:translateZ(0) scale(1.035);
+  filter:saturate(1.08) contrast(1.04);
+}
+.hero-video-shade{
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(90deg,#080f20 0%,rgba(8,15,32,.38) 18%,transparent 48%,rgba(8,15,32,.12) 100%),
+    linear-gradient(0deg,rgba(8,15,32,.42),transparent 35%,rgba(8,15,32,.16));
+}
+.premium-hero-art:before{
+  content:"";
+  position:absolute;
+  inset:10px 0 10px 10px;
+  z-index:0;
+  border-radius:26px;
+  background:radial-gradient(circle at 55% 45%,rgba(105,75,255,.18),transparent 55%);
+  pointer-events:none;
+}
+.premium-hero-art .premium-hero-card{
+  z-index:4!important;
+  background:rgba(8,15,32,.70)!important;
+  border-color:rgba(130,151,208,.42)!important;
+  backdrop-filter:blur(12px)!important;
+}
+.hero-video-badge{
+  position:absolute;
+  left:24px;
+  bottom:25px;
+  z-index:4;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:99px;
+  background:rgba(7,13,28,.72);
+  backdrop-filter:blur(12px);
+  color:#eaf0ff;
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+.hero-video-badge i{color:#9dff38}
+.premium-hero-art .hero-photo-bg,
+.premium-hero-art .hero-photo-overlay,
+.premium-hero-art .premium-hero-glow,
+.premium-hero-art .hero-watch,
+.premium-hero-art .premium-hero-slogan{display:none!important}
+@media(max-width:900px){
+  .premium-home-hero .hero-grid{grid-template-columns:1fr!important}
+  .premium-hero-art{min-height:440px!important;margin-top:10px}
+  .hero-main-video{object-position:center}
+}
+@media(max-width:650px){
+  .premium-hero-art{min-height:350px!important;margin-left:-14px;margin-right:-14px}
+  .premium-hero-art .premium-hero-card{display:none!important}
+  .hero-video-badge{left:18px;bottom:18px}
+}
 </style></head>
 <body>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home"><div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><b>Dr. Sandaruwan Perera</b><span>Commerce & Accounting Education</span></div></a><nav class="links"><a class="active" href="#home">Home</a><a href="#programs">Programs</a><a href="#resources">Resources</a><a href="#results">Results</a><a href="#about">About</a><a href="#contact">Contact</a></nav><a class="portal" href="https://drsandaruwanperera.lk/studentportal/" target="_blank" rel="noopener">Student Portal <i class="fa-solid fa-arrow-right"></i></a></div></header>
@@ -278,13 +360,13 @@ body{background:#070d1c}
     </div>
   </div>
   <div class="hero-art premium-hero-art">
-    <div class="hero-photo-bg"></div>
-    <div class="hero-photo-overlay"></div>
-    <div class="premium-hero-glow"></div>
+    <video class="hero-main-video" autoplay muted loop playsinline preload="metadata" aria-label="Dr. Sandaruwan premium hero animation">
+      <source src="assets/hero-animation.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-shade"></div>
     <div class="premium-hero-card card-left"><span>STRUCTURED</span><b>Learning Path</b><small>Learn · Practise · Improve</small></div>
     <div class="premium-hero-card card-right"><span>A/L ACCOUNTING</span><b>Exam Ready</b><small>Model Papers · Answers · Results</small></div>
-    <div class="watch hero-watch"><i class="fa-solid fa-play"></i><span>Watch<br>Introduction</span></div>
-    <div class="premium-hero-slogan">Discipline<br><b>creates</b><br>results.</div>
+    <div class="hero-video-badge"><i class="fa-solid fa-sparkles"></i><span>Learn · Practise · Achieve</span></div>
   </div>
 </div>
 </section>
