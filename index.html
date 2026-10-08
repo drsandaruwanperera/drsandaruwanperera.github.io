@@ -188,6 +188,23 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-10;ba
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}[data-motion]{opacity:1!important;transform:none!important}}
 </style>
 
+<style id="hero-3d-parallax">
+.hero{position:relative;perspective:1200px;isolation:isolate}
+.hero-grid{position:relative;transform-style:preserve-3d}
+.hero-art{transform-style:preserve-3d;will-change:transform;transition:transform .18s cubic-bezier(.22,1,.36,1);box-shadow:inset 35px 0 80px rgba(22,31,85,.08)}
+.hero-art:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:radial-gradient(circle at 65% 42%,rgba(97,56,255,.10),transparent 28%),linear-gradient(120deg,transparent 45%,rgba(255,255,255,.10) 50%,transparent 55%);mix-blend-mode:screen;opacity:.7}
+.hero-video{will-change:transform;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.hero-copy{transform:translateZ(35px);will-change:transform;transition:transform .22s cubic-bezier(.22,1,.36,1)}
+.hero-art .sir{transform:translate3d(0,0,80px) scale(1.02);will-change:transform;transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.hero-art .books{transform:translate3d(0,0,45px);will-change:transform;transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.hero-art .watch{transform:translate3d(0,0,65px);will-change:transform;transition:transform .22s cubic-bezier(.22,1,.36,1)}
+.hero-3d-glow{position:absolute;inset:8% 10%;border-radius:50%;background:radial-gradient(circle,rgba(97,56,255,.16),transparent 62%);filter:blur(30px);pointer-events:none;z-index:1;transform:translateZ(20px)}
+.hero-3d-hint{position:absolute;right:24px;bottom:18px;z-index:8;display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid rgba(255,255,255,.24);border-radius:99px;background:rgba(10,20,50,.55);backdrop-filter:blur(10px);color:#fff;font-size:7px;font-weight:800;letter-spacing:.04em;opacity:.72;pointer-events:none}
+.hero-3d-hint i{font-size:9px;color:#a6ff2e;animation:heroHintMove 1.8s ease-in-out infinite}
+@keyframes heroHintMove{0%,100%{transform:translateX(-2px)}50%{transform:translateX(3px)}}
+@media(max-width:800px){.hero-copy{transform:none!important}.hero-art{transition:none!important;transform:none!important}.hero-art .sir,.hero-art .books,.hero-art .watch{transform:none!important}.hero-3d-hint{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-art,.hero-video,.hero-copy,.hero-art .sir,.hero-art .books,.hero-art .watch{transition:none!important;transform:none!important}.hero-3d-hint{display:none}}
+</style>
 </head>
 <body>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home"><div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><b>Dr. Sandaruwan Perera</b><span>Commerce & Accounting Education</span></div></a><nav class="links"><a class="active" href="#home">Home</a><a href="#about">About</a><a href="#programs">Programs</a><a href="#results">Results</a><a href="#resources">Resources</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav><a class="portal" href="https://drsandaruwanperera.lk/studentportal/" target="_blank" rel="noopener">Student Portal <i class="fa-solid fa-arrow-right"></i></a></div></header>
