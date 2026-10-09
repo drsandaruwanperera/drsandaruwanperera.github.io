@@ -710,6 +710,78 @@ body{
 .premium-hero-art .card-right span{color:#9dff3d!important}
 @media(max-width:1100px){.premium-home-hero h1{font-size:51px!important}.premium-home-hero .hero-grid{gap:28px!important}}
 @media(max-width:800px){.premium-home-hero h1{font-size:43px!important;letter-spacing:-2px!important}.premium-hero-art{height:410px!important}}
+</style><style id="hero-video-fullscreen-fix">
+/* Make the existing hero video cover the entire hero section */
+.premium-home-hero{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  min-height:620px!important;
+  background:#05091b!important;
+}
+.premium-home-hero .hero-grid{
+  position:relative!important;
+  z-index:3!important;
+  min-height:620px!important;
+}
+.premium-home-hero .hero-copy{
+  position:relative!important;
+  z-index:5!important;
+}
+.premium-home-hero .premium-hero-art{
+  position:absolute!important;
+  top:0!important;
+  bottom:0!important;
+  left:50%!important;
+  right:auto!important;
+  width:100vw!important;
+  height:100%!important;
+  min-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+  z-index:0!important;
+  transform:translateX(-50%)!important;
+  pointer-events:none!important;
+}
+.premium-home-hero .hero-main-video{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  border:0!important;
+  border-radius:0!important;
+  transform:none!important;
+}
+.premium-home-hero .hero-video-shade{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:
+    linear-gradient(90deg,rgba(5,9,27,.97) 0%,rgba(5,9,27,.91) 24%,rgba(5,9,27,.68) 47%,rgba(5,9,27,.22) 76%,rgba(5,9,27,.32) 100%),
+    linear-gradient(0deg,rgba(5,9,27,.68),transparent 45%,rgba(5,9,27,.24))!important;
+}
+.premium-home-hero .premium-hero-card,
+.premium-home-hero .hero-video-badge{display:none!important}
+@media(max-width:900px){
+  .premium-home-hero,.premium-home-hero .hero-grid{min-height:680px!important}
+  .premium-home-hero .hero-main-video{object-position:58% center!important}
+  .premium-home-hero .hero-video-shade{
+    background:linear-gradient(90deg,rgba(5,9,27,.94),rgba(5,9,27,.72) 62%,rgba(5,9,27,.42))!important;
+  }
+}
+@media(max-width:650px){
+  .premium-home-hero,.premium-home-hero .hero-grid{min-height:720px!important}
+  .premium-home-hero .hero-main-video{object-position:62% center!important}
+}
 </style></head>
 <body>
 <header class="header"><div class="wrap nav"><a class="brand" href="#home"><div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><b>Dr. Sandaruwan Perera</b><span>Commerce & Accounting Education</span></div></a><nav class="links"><a class="active" href="#home">Home</a><a href="#programs">Programs</a><a href="#resources">Resources</a><a href="#results">Results</a><a href="#about">About</a><a href="#contact">Contact</a></nav><a class="portal premium-login"  href="https://drsandaruwanperera.lk/studentportal/" target="_blank" rel="noopener">Student Log In <i class="fa-solid fa-arrow-right"></i></a></div></header>
