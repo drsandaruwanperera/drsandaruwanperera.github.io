@@ -67,3 +67,57 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
   hero.addEventListener('pointerenter',()=>{cursorGlow.style.opacity='1'});
 });
+
+/* Professional scroll experience: progress, active navigation and polished section reveals. */
+document.addEventListener('DOMContentLoaded',()=>{
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const bar=document.createElement('div');
+  bar.className='site-scroll-progress';
+  bar.setAttribute('aria-hidden','true');
+  document.body.appendChild(bar);
+
+  const updateProgress=()=>{
+    const root=document.documentElement;
+    const max=root.scrollHeight-window.innerHeight;
+    const progress=max>0?Math.min(100,Math.max(0,window.scrollY/max*100)):0;
+    bar.style.transform='scaleX('+(progress/100)+')';
+  };
+  updateProgress();
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  window.addEventListener('resize',updateProgress);
+
+  const navLinks=[...document.querySelectorAll('.header .links a[href^="#"]')];
+  const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if('IntersectionObserver' in window && navLinks.length){
+    const navObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        navLinks.forEach(link=>{
+          const active=link.getAttribute('href')==='#'+entry.target.id;
+          link.classList.toggle('active',active);
+          if(active)link.setAttribute('aria-current','location');
+          else link.removeAttribute('aria-current');
+        });
+      });
+    },{rootMargin:'-28% 0px -58% 0px',threshold:0});
+    sections.forEach(section=>navObserver.observe(section));
+  }
+
+  if(!reduceMotion && 'IntersectionObserver' in window){
+    document.querySelectorAll('.path-card,.premium-resource-card,.legacy-qualification-grid>div,.legacy-achievements>div,.coming-card,.stat,.ready-links>a').forEach((el,i)=>{
+      if(el.hasAttribute('data-motion'))return;
+      el.setAttribute('data-motion','reveal');
+      el.style.transitionDelay=(Math.min(i%4,3)*75)+'ms';
+    });
+    const unseen=[...document.querySelectorAll('[data-motion]:not(.is-visible)')];
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.10,rootMargin:'0px 0px -35px 0px'});
+    unseen.forEach(el=>revealObserver.observe(el));
+  }
+});
