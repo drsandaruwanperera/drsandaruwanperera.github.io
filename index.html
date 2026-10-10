@@ -782,6 +782,14 @@ body{
   .premium-home-hero,.premium-home-hero .hero-grid{min-height:720px!important}
   .premium-home-hero .hero-main-video{object-position:62% center!important}
 }
+</style><style id="professional-scroll-polish">
+.site-scroll-progress{position:fixed;left:0;top:0;width:100%;height:3px;z-index:99999;transform:scaleX(0);transform-origin:left center;background:linear-gradient(90deg,#7861ff,#a6ff2e);box-shadow:0 0 14px #8dff2e55;pointer-events:none}
+.header .links a{position:relative;transition:color .2s ease}
+.header .links a:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;background:linear-gradient(90deg,#7861ff,#a6ff2e);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.header .links a.active:after{transform:scaleX(1)}
+.path-card,.premium-resource-card,.coming-card,.stat,.quote,.ready-links>a,.legacy-qualification-grid>div,.legacy-achievements>div{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease}
+.path-card:hover,.premium-resource-card:hover,.coming-card:hover,.stat:hover,.quote:hover,.ready-links>a:hover{transform:translateY(-5px)}
+@media(prefers-reduced-motion:reduce){.site-scroll-progress{display:none}.header .links a:after{transition:none}}
 </style><style id="center-student-portal-button">
 .header .premium-login{
   display:inline-flex!important;
@@ -978,5 +986,5 @@ body{
 </script>
   
   <script src="facebook-feed.js?v=1"></script>
-<script src="premium-motion.js?v=2"></script>
+<script src="premium-motion.js?v=3"></script>
 </body></html>
