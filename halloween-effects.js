@@ -267,10 +267,14 @@
         style.remove();
     }
 
-    // Also remove immediately if the page stays open across the cutoff.
+    // Remove effects on the exact cutoff, including if the tab stays open.
     const cutoffTimer = window.setTimeout(removeEffects, remaining);
-    window.addEventListener("pagehide", () => {
-        window.clearTimeout(cutoffTimer);
-        aborter.abort();
-    }, { once: true });
+    const checkCutoff = () => {
+        if (Date.now() >= CUTOFF) removeEffects();
+    };
+    // Browsers may pause timers while a page is backgrounded or in the back/forward cache.
+    window.addEventListener("pageshow", checkCutoff, { signal: aborter.signal });
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") checkCutoff();
+    }, { signal: aborter.signal });
 })();
