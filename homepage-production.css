@@ -187,3 +187,4 @@ body{font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialias
 .facebook-updates .live-facebook-carousel{overflow:hidden;border-radius:12px}.facebook-updates .facebook-track{display:flex;gap:14px;width:max-content}.facebook-updates .facebook-card{width:min(300px,75vw);border:1px solid #263b5d;border-radius:12px;background:#101e38;color:#fff;text-decoration:none;overflow:hidden}.facebook-updates .facebook-card p{color:#aab8d0;font-size:11px}
 @media(max-width:760px){.educator-intro{grid-template-columns:1fr}.educator-intro video{max-height:none}.facebook-updates-heading{align-items:flex-start;flex-direction:column}.facebook-follow-btn{align-self:flex-start}}
 .educator-intro{background:linear-gradient(145deg,#13264a,#0d1834);border-color:#2d4167;border-left:3px solid #9be33d;box-shadow:0 10px 24px #0b15301c}
+
