@@ -22,7 +22,7 @@ main,
 }
 
 .hero-bg-shape.shape-two {
-    background: radial-gradient(circle, rgba(0,230,176,.10) 0%, rgba(0,230,176,0) 70%) !important;
+    background: radial-gradient(circle, rgba(124,58,237,.10) 0%, rgba(0,230,176,0) 70%) !important;
     opacity: 1 !important;
 }
 
@@ -38,7 +38,7 @@ main,
 }
 
 .hero-content .eyebrow {
-    color: #a0ff1a !important;
+    color: #a6ff2e !important;
 }
 
 .hero-features .mini-feature {
@@ -47,8 +47,8 @@ main,
 
 .hero-features .mini-feature i {
     background: #1b2340 !important;
-    color: #a0ff1a !important;
-    border-color: rgba(160,255,26,.18) !important;
+    color: #a6ff2e !important;
+    border-color: rgba(166,255,46,.18) !important;
     box-shadow: 0 8px 22px rgba(0,0,0,.20) !important;
 }
 
@@ -86,8 +86,8 @@ main,
     --theme-border: rgba(141,107,255,.18);
     --theme-text: #f4f6ff;
     --theme-muted: #aeb9d0;
-    --theme-primary: #8d6bff;
-    --theme-accent: #a0ff1a;
+    --theme-primary: #5b4bff;
+    --theme-accent: #a6ff2e;
 }
 
 body {
@@ -193,7 +193,7 @@ body {
 .schedule-card:hover,
 .resource-card:hover,
 .gallery-card:hover {
-    border-color: rgba(160,255,26,.28) !important;
+    border-color: rgba(166,255,46,.28) !important;
     box-shadow: 0 24px 55px rgba(0,0,0,.28) !important;
 }
 
@@ -203,9 +203,9 @@ body {
 }
 
 .schedule-tag {
-    background: rgba(160,255,26,.10) !important;
+    background: rgba(166,255,46,.10) !important;
     color: var(--theme-accent) !important;
-    border-color: rgba(160,255,26,.20) !important;
+    border-color: rgba(166,255,46,.20) !important;
 }
 
 .portal-section {
