@@ -188,3 +188,30 @@ body{font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialias
 @media(max-width:760px){.educator-intro{grid-template-columns:1fr}.educator-intro video{max-height:none}.facebook-updates-heading{align-items:flex-start;flex-direction:column}.facebook-follow-btn{align-self:flex-start}}
 .educator-intro{background:linear-gradient(145deg,#13264a,#0d1834);border-color:#2d4167;border-left:3px solid #9be33d;box-shadow:0 10px 24px #0b15301c}
 
+
+/* High-contrast typography on the website's light/white panels. */
+.grade-rating,
+.grade-rating * ,
+.portal-mini,
+.portal-mini * ,
+.guide-field,
+.guide-label {
+  color:#14213d !important;
+}
+.grade-rating small,
+.grade-rating em,
+.portal-mini > p,
+.guide-help,
+.guide-lock {
+  color:#40516d !important;
+}
+.portal-mini h3,
+.grade-rating b,
+.guide-label,
+.guide-field.is-filled {
+  color:#0b1530 !important;
+}
+.grade-rating .rating-stars,
+.grade-rating .stars {
+  color:#b7791f !important;
+}
